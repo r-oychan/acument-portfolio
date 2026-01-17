@@ -102,6 +102,13 @@
 .portfolio-page a {
   color: var(--color-accent);
   text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.portfolio-page a:hover {
+  color: #003d82;
+  text-decoration: underline;
 }
 
 /* ============================================================================
@@ -456,6 +463,153 @@
   font-size: 1.3rem;
   font-style: italic;
   color: var(--color-text-secondary);
+}
+
+/* ============================================================================
+   MOBILE SCREEN OPTIMIZATIONS
+   ============================================================================ */
+@media screen and (max-width: 768px) {
+  .portfolio-page {
+    padding: 0.5rem;
+    background: var(--color-bg);
+  }
+
+  .page {
+    padding: 1rem;
+    margin: 0 0 0.5rem 0;
+    box-shadow: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page--cover {
+    padding: 1.5rem 1rem;
+    min-height: auto;
+  }
+
+  .cover-title {
+    font-size: 2rem;
+  }
+
+  .cover-subtitle {
+    font-size: 1rem;
+  }
+
+  .cover-logo {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .cover-date {
+    margin-top: var(--space-md);
+  }
+
+  .case-client {
+    font-size: 1.6rem;
+  }
+
+  .case-project-title {
+    font-size: 1.1rem;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    margin-top: var(--space-md);
+  }
+
+  .portfolio-page h1 {
+    font-size: 1.8rem;
+  }
+
+  .portfolio-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .portfolio-page h3 {
+    font-size: 1.2rem;
+    margin-top: var(--space-md);
+  }
+
+  .portfolio-page h4 {
+    margin-top: var(--space-md);
+  }
+
+  .portfolio-page blockquote {
+    padding: var(--space-sm);
+    margin: var(--space-md) 0;
+    font-size: 0.95rem;
+  }
+
+  .impact-card {
+    padding: var(--space-sm);
+  }
+
+  .impact-card__metric {
+    font-size: 1rem;
+  }
+
+  .highlight-box {
+    padding: var(--space-sm);
+  }
+
+  /* Table mobile optimization */
+  .portfolio-page table {
+    font-size: 0.8rem;
+  }
+
+  .portfolio-page th,
+  .portfolio-page td {
+    padding: var(--space-xs) var(--space-xs);
+  }
+
+  /* Make links more tappable on mobile */
+  .portfolio-page a {
+    padding: 0.25rem 0;
+    display: inline-block;
+  }
+
+  .portfolio-page table a {
+    padding: 0.5rem 0.25rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+  .portfolio-page {
+    padding: 0.25rem;
+  }
+
+  .page {
+    padding: 0.75rem;
+  }
+
+  .cover-title {
+    font-size: 1.6rem;
+  }
+
+  .case-client {
+    font-size: 1.4rem;
+  }
+
+  .tags {
+    gap: 0.25rem;
+  }
+
+  .tag {
+    font-size: 0.6rem;
+    padding: 3px 8px;
+  }
 }
 
 /* Print Styles */
