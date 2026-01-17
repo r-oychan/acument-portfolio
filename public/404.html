@@ -7,7 +7,8 @@
       // GitHub Pages SPA redirect script
       // Store the current path in sessionStorage and redirect to index.html
       sessionStorage.redirect = location.href;
-      location.replace(location.origin + location.pathname.split("/").slice(0, 2).join("/"));
+      // Redirect to the base path /acument-portfolio/
+      location.replace(location.origin + location.pathname.split("/").slice(0, 2).join("/") + "/");
     </script>
   </head>
   <body></body>
