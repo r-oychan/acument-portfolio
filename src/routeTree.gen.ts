@@ -9,21 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from "./routes/__root"
-import { Route as PortfolioRouteImport } from "./routes/portfolio"
 import { Route as AboutRouteImport } from "./routes/about"
 import { Route as IndexRouteImport } from "./routes/index"
-import { Route as PortfolioTuitionRouteImport } from "./routes/portfolio.tuition"
-import { Route as PortfolioRemittanceRouteImport } from "./routes/portfolio.remittance"
-import { Route as PortfolioMobilityRouteImport } from "./routes/portfolio.mobility"
-import { Route as PortfolioLuxuryRouteImport } from "./routes/portfolio.luxury"
-import { Route as PortfolioFinancialRouteImport } from "./routes/portfolio.financial"
-import { Route as PortfolioDisneylandRouteImport } from "./routes/portfolio.disneyland"
+import { Route as PortfolioIndexRouteImport } from "./routes/portfolio/index"
+import { Route as PortfolioTuitionRouteImport } from "./routes/portfolio/tuition"
+import { Route as PortfolioRemittanceRouteImport } from "./routes/portfolio/remittance"
+import { Route as PortfolioMobilityRouteImport } from "./routes/portfolio/mobility"
+import { Route as PortfolioLuxuryRouteImport } from "./routes/portfolio/luxury"
+import { Route as PortfolioFinancialRouteImport } from "./routes/portfolio/financial"
+import { Route as PortfolioDisneylandRouteImport } from "./routes/portfolio/disneyland"
 
-const PortfolioRoute = PortfolioRouteImport.update({
-  id: "/portfolio",
-  path: "/portfolio",
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AboutRoute = AboutRouteImport.update({
   id: "/about",
   path: "/about",
@@ -34,122 +29,126 @@ const IndexRoute = IndexRouteImport.update({
   path: "/",
   getParentRoute: () => rootRouteImport,
 } as any)
+const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
+  id: "/portfolio/",
+  path: "/portfolio/",
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PortfolioTuitionRoute = PortfolioTuitionRouteImport.update({
-  id: "/tuition",
-  path: "/tuition",
-  getParentRoute: () => PortfolioRoute,
+  id: "/portfolio/tuition",
+  path: "/portfolio/tuition",
+  getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioRemittanceRoute = PortfolioRemittanceRouteImport.update({
-  id: "/remittance",
-  path: "/remittance",
-  getParentRoute: () => PortfolioRoute,
+  id: "/portfolio/remittance",
+  path: "/portfolio/remittance",
+  getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioMobilityRoute = PortfolioMobilityRouteImport.update({
-  id: "/mobility",
-  path: "/mobility",
-  getParentRoute: () => PortfolioRoute,
+  id: "/portfolio/mobility",
+  path: "/portfolio/mobility",
+  getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioLuxuryRoute = PortfolioLuxuryRouteImport.update({
-  id: "/luxury",
-  path: "/luxury",
-  getParentRoute: () => PortfolioRoute,
+  id: "/portfolio/luxury",
+  path: "/portfolio/luxury",
+  getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioFinancialRoute = PortfolioFinancialRouteImport.update({
-  id: "/financial",
-  path: "/financial",
-  getParentRoute: () => PortfolioRoute,
+  id: "/portfolio/financial",
+  path: "/portfolio/financial",
+  getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioDisneylandRoute = PortfolioDisneylandRouteImport.update({
-  id: "/disneyland",
-  path: "/disneyland",
-  getParentRoute: () => PortfolioRoute,
+  id: "/portfolio/disneyland",
+  path: "/portfolio/disneyland",
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   "/": typeof IndexRoute
   "/about": typeof AboutRoute
-  "/portfolio": typeof PortfolioRouteWithChildren
   "/portfolio/disneyland": typeof PortfolioDisneylandRoute
   "/portfolio/financial": typeof PortfolioFinancialRoute
   "/portfolio/luxury": typeof PortfolioLuxuryRoute
   "/portfolio/mobility": typeof PortfolioMobilityRoute
   "/portfolio/remittance": typeof PortfolioRemittanceRoute
   "/portfolio/tuition": typeof PortfolioTuitionRoute
+  "/portfolio": typeof PortfolioIndexRoute
 }
 export interface FileRoutesByTo {
   "/": typeof IndexRoute
   "/about": typeof AboutRoute
-  "/portfolio": typeof PortfolioRouteWithChildren
   "/portfolio/disneyland": typeof PortfolioDisneylandRoute
   "/portfolio/financial": typeof PortfolioFinancialRoute
   "/portfolio/luxury": typeof PortfolioLuxuryRoute
   "/portfolio/mobility": typeof PortfolioMobilityRoute
   "/portfolio/remittance": typeof PortfolioRemittanceRoute
   "/portfolio/tuition": typeof PortfolioTuitionRoute
+  "/portfolio": typeof PortfolioIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   "/": typeof IndexRoute
   "/about": typeof AboutRoute
-  "/portfolio": typeof PortfolioRouteWithChildren
   "/portfolio/disneyland": typeof PortfolioDisneylandRoute
   "/portfolio/financial": typeof PortfolioFinancialRoute
   "/portfolio/luxury": typeof PortfolioLuxuryRoute
   "/portfolio/mobility": typeof PortfolioMobilityRoute
   "/portfolio/remittance": typeof PortfolioRemittanceRoute
   "/portfolio/tuition": typeof PortfolioTuitionRoute
+  "/portfolio/": typeof PortfolioIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | "/"
     | "/about"
-    | "/portfolio"
     | "/portfolio/disneyland"
     | "/portfolio/financial"
     | "/portfolio/luxury"
     | "/portfolio/mobility"
     | "/portfolio/remittance"
     | "/portfolio/tuition"
+    | "/portfolio"
   fileRoutesByTo: FileRoutesByTo
   to:
     | "/"
     | "/about"
-    | "/portfolio"
     | "/portfolio/disneyland"
     | "/portfolio/financial"
     | "/portfolio/luxury"
     | "/portfolio/mobility"
     | "/portfolio/remittance"
     | "/portfolio/tuition"
+    | "/portfolio"
   id:
     | "__root__"
     | "/"
     | "/about"
-    | "/portfolio"
     | "/portfolio/disneyland"
     | "/portfolio/financial"
     | "/portfolio/luxury"
     | "/portfolio/mobility"
     | "/portfolio/remittance"
     | "/portfolio/tuition"
+    | "/portfolio/"
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  PortfolioRoute: typeof PortfolioRouteWithChildren
+  PortfolioDisneylandRoute: typeof PortfolioDisneylandRoute
+  PortfolioFinancialRoute: typeof PortfolioFinancialRoute
+  PortfolioLuxuryRoute: typeof PortfolioLuxuryRoute
+  PortfolioMobilityRoute: typeof PortfolioMobilityRoute
+  PortfolioRemittanceRoute: typeof PortfolioRemittanceRoute
+  PortfolioTuitionRoute: typeof PortfolioTuitionRoute
+  PortfolioIndexRoute: typeof PortfolioIndexRoute
 }
 
 declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    "/portfolio": {
-      id: "/portfolio"
-      path: "/portfolio"
-      fullPath: "/portfolio"
-      preLoaderRoute: typeof PortfolioRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     "/about": {
       id: "/about"
       path: "/about"
@@ -164,77 +163,68 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    "/portfolio/": {
+      id: "/portfolio/"
+      path: "/portfolio"
+      fullPath: "/portfolio"
+      preLoaderRoute: typeof PortfolioIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     "/portfolio/tuition": {
       id: "/portfolio/tuition"
-      path: "/tuition"
+      path: "/portfolio/tuition"
       fullPath: "/portfolio/tuition"
       preLoaderRoute: typeof PortfolioTuitionRouteImport
-      parentRoute: typeof PortfolioRoute
+      parentRoute: typeof rootRouteImport
     }
     "/portfolio/remittance": {
       id: "/portfolio/remittance"
-      path: "/remittance"
+      path: "/portfolio/remittance"
       fullPath: "/portfolio/remittance"
       preLoaderRoute: typeof PortfolioRemittanceRouteImport
-      parentRoute: typeof PortfolioRoute
+      parentRoute: typeof rootRouteImport
     }
     "/portfolio/mobility": {
       id: "/portfolio/mobility"
-      path: "/mobility"
+      path: "/portfolio/mobility"
       fullPath: "/portfolio/mobility"
       preLoaderRoute: typeof PortfolioMobilityRouteImport
-      parentRoute: typeof PortfolioRoute
+      parentRoute: typeof rootRouteImport
     }
     "/portfolio/luxury": {
       id: "/portfolio/luxury"
-      path: "/luxury"
+      path: "/portfolio/luxury"
       fullPath: "/portfolio/luxury"
       preLoaderRoute: typeof PortfolioLuxuryRouteImport
-      parentRoute: typeof PortfolioRoute
+      parentRoute: typeof rootRouteImport
     }
     "/portfolio/financial": {
       id: "/portfolio/financial"
-      path: "/financial"
+      path: "/portfolio/financial"
       fullPath: "/portfolio/financial"
       preLoaderRoute: typeof PortfolioFinancialRouteImport
-      parentRoute: typeof PortfolioRoute
+      parentRoute: typeof rootRouteImport
     }
     "/portfolio/disneyland": {
       id: "/portfolio/disneyland"
-      path: "/disneyland"
+      path: "/portfolio/disneyland"
       fullPath: "/portfolio/disneyland"
       preLoaderRoute: typeof PortfolioDisneylandRouteImport
-      parentRoute: typeof PortfolioRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
 
-interface PortfolioRouteChildren {
-  PortfolioDisneylandRoute: typeof PortfolioDisneylandRoute
-  PortfolioFinancialRoute: typeof PortfolioFinancialRoute
-  PortfolioLuxuryRoute: typeof PortfolioLuxuryRoute
-  PortfolioMobilityRoute: typeof PortfolioMobilityRoute
-  PortfolioRemittanceRoute: typeof PortfolioRemittanceRoute
-  PortfolioTuitionRoute: typeof PortfolioTuitionRoute
-}
-
-const PortfolioRouteChildren: PortfolioRouteChildren = {
+const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   PortfolioDisneylandRoute: PortfolioDisneylandRoute,
   PortfolioFinancialRoute: PortfolioFinancialRoute,
   PortfolioLuxuryRoute: PortfolioLuxuryRoute,
   PortfolioMobilityRoute: PortfolioMobilityRoute,
   PortfolioRemittanceRoute: PortfolioRemittanceRoute,
   PortfolioTuitionRoute: PortfolioTuitionRoute,
-}
-
-const PortfolioRouteWithChildren = PortfolioRoute._addFileChildren(
-  PortfolioRouteChildren,
-)
-
-const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  PortfolioRoute: PortfolioRouteWithChildren,
+  PortfolioIndexRoute: PortfolioIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
