@@ -41,8 +41,8 @@ function PortfolioPage() {
         <div className="cover-eyebrow">Client Success Stories</div>
         <h1 className="cover-title">Driving Digital Transformation</h1>
         <p className="cover-subtitle">
-          Case studies demonstrating measurable impact across payments, commerce, and
-          financial services.
+          Case studies demonstrating measurable impact across payments, commerce, and financial
+          services.
         </p>
         <div className="cover-date">January 2026</div>
         <div className="page-footer">
@@ -210,25 +210,24 @@ function PortfolioPage() {
 
         <h4>The Challenge</h4>
         <p>
-          In an era where consumers expect seamless digital experiences, one of Asia&apos;s
-          most iconic theme park destinations faced a critical inflection point. Legacy
-          ticketing processes—heavily reliant on paper tickets and manual operations—created
-          friction at every touchpoint: long queues at entry gates, limited flexibility for
-          guests purchasing bundled experiences, and constrained visibility into guest
-          behavior patterns.
+          In an era where consumers expect seamless digital experiences, one of Asia&apos;s most
+          iconic theme park destinations faced a critical inflection point. Legacy ticketing
+          processes—heavily reliant on paper tickets and manual operations—created friction at every
+          touchpoint: long queues at entry gates, limited flexibility for guests purchasing bundled
+          experiences, and constrained visibility into guest behavior patterns.
         </p>
         <p>
-          The park&apos;s leadership recognized that digital transformation was no longer
-          optional. To remain competitive and deliver the world-class experiences guests
-          expect, they needed to fundamentally reimagine how visitors discover, purchase, and
-          redeem their park experiences.
+          The park&apos;s leadership recognized that digital transformation was no longer optional.
+          To remain competitive and deliver the world-class experiences guests expect, they needed
+          to fundamentally reimagine how visitors discover, purchase, and redeem their park
+          experiences.
         </p>
 
         <h4>The Approach</h4>
         <p>
-          We partnered with the resort to architect and deliver a comprehensive digital
-          commerce ecosystem—one that would serve as the foundation for the guest experience
-          from the moment of purchase through park departure.
+          We partnered with the resort to architect and deliver a comprehensive digital commerce
+          ecosystem—one that would serve as the foundation for the guest experience from the moment
+          of purchase through park departure.
         </p>
 
         <p>
@@ -236,17 +235,17 @@ function PortfolioPage() {
           <br />
           We designed and implemented a scalable eCommerce engine capable of handling complex
           product configurations: standalone day tickets, multi-day passes, hotel-and-ticket
-          packages, and premium entitlement bundles including priority access passes and
-          dining credits. The platform integrates seamlessly with the park&apos;s existing
-          ticketing infrastructure.
+          packages, and premium entitlement bundles including priority access passes and dining
+          credits. The platform integrates seamlessly with the park&apos;s existing ticketing
+          infrastructure.
         </p>
 
         <p>
           <strong>Omnichannel Payment Integration</strong>
           <br />
-          Recognizing the diverse payment preferences of international visitors, we
-          engineered a payment orchestration layer supporting major credit cards and regional
-          payment methods—ensuring frictionless checkout regardless of guest origin.
+          Recognizing the diverse payment preferences of international visitors, we engineered a
+          payment orchestration layer supporting major credit cards and regional payment
+          methods—ensuring frictionless checkout regardless of guest origin.
         </p>
 
         <div className="page-footer">
@@ -265,19 +264,18 @@ function PortfolioPage() {
         <p>
           <strong>Operations Command Center</strong>
           <br />
-          For park operations teams, we delivered an administrative portal providing
-          end-to-end transaction visibility: real-time query capabilities, amendment
-          workflows, and streamlined refund processing. The platform also empowers
-          merchandising teams to rapidly configure and launch new packages without
-          engineering dependencies.
+          For park operations teams, we delivered an administrative portal providing end-to-end
+          transaction visibility: real-time query capabilities, amendment workflows, and streamlined
+          refund processing. The platform also empowers merchandising teams to rapidly configure and
+          launch new packages without engineering dependencies.
         </p>
 
         <p>
           <strong>Brand-Aligned Experience Design</strong>
           <br />
-          Every interface element was crafted in close collaboration with the client&apos;s
-          design teams, ensuring pixel-perfect alignment with Disney&apos;s exacting brand
-          standards and user experience principles.
+          Every interface element was crafted in close collaboration with the client&apos;s design
+          teams, ensuring pixel-perfect alignment with Disney&apos;s exacting brand standards and
+          user experience principles.
         </p>
 
         <h4>The Impact</h4>
@@ -311,8 +309,8 @@ function PortfolioPage() {
 
         <blockquote>
           <p>
-            The transformation established a digital foundation that continues to power new
-            guest experiences and revenue opportunities.
+            The transformation established a digital foundation that continues to power new guest
+            experiences and revenue opportunities.
           </p>
         </blockquote>
 
@@ -368,22 +366,22 @@ function PortfolioPage() {
 
         <h4>The Challenge</h4>
         <p>
-          As ride-hailing platforms reshape urban mobility across Asia, the underlying
-          payment infrastructure must deliver reliability, speed, and flexibility at scale. A
-          rapidly growing Hong Kong-based mobility platform required a payment ecosystem
-          capable of supporting its ambitious growth trajectory while navigating the unique
-          complexities of the local market.
+          As ride-hailing platforms reshape urban mobility across Asia, the underlying payment
+          infrastructure must deliver reliability, speed, and flexibility at scale. A rapidly
+          growing Hong Kong-based mobility platform required a payment ecosystem capable of
+          supporting its ambitious growth trajectory while navigating the unique complexities of the
+          local market.
         </p>
         <p>
           The platform needed to accept every payment method their riders preferred—from
-          international cards to local digital wallets—while simultaneously managing the
-          intricate financial flows between riders, drivers, and payment networks.
+          international cards to local digital wallets—while simultaneously managing the intricate
+          financial flows between riders, drivers, and payment networks.
         </p>
 
         <h4>The Approach</h4>
         <p>
-          We architected and delivered an enterprise-grade payment infrastructure designed
-          for the specific demands of marketplace platforms.
+          We architected and delivered an enterprise-grade payment infrastructure designed for the
+          specific demands of marketplace platforms.
         </p>
 
         <p>
@@ -403,8 +401,8 @@ function PortfolioPage() {
           </li>
         </ul>
         <p>
-          Both online (in-app) and offline (terminal-based) payment flows are supported
-          through a unified integration layer.
+          Both online (in-app) and offline (terminal-based) payment flows are supported through a
+          unified integration layer.
         </p>
 
         <div className="page-footer">
@@ -423,18 +421,18 @@ function PortfolioPage() {
         <p>
           <strong>Master Merchant Architecture</strong>
           <br />
-          We designed and implemented a sophisticated sub-merchant management system enabling
-          the platform to operate as a master merchant. The architecture handles automated
-          fund distribution, transparent fee calculations, and settlement orchestration
-          across drivers, the platform, and payment providers.
+          We designed and implemented a sophisticated sub-merchant management system enabling the
+          platform to operate as a master merchant. The architecture handles automated fund
+          distribution, transparent fee calculations, and settlement orchestration across drivers,
+          the platform, and payment providers.
         </p>
 
         <p>
           <strong>Automated Reconciliation Engine</strong>
           <br />
-          High-volume transaction environments demand precision. Our reconciliation system
-          processes daily transaction flows across multiple payment rails, eliminating manual
-          matching processes and enabling same-day financial visibility.
+          High-volume transaction environments demand precision. Our reconciliation system processes
+          daily transaction flows across multiple payment rails, eliminating manual matching
+          processes and enabling same-day financial visibility.
         </p>
 
         <h4>The Impact</h4>
@@ -528,15 +526,14 @@ function PortfolioPage() {
 
         <h4>The Challenge</h4>
         <p>
-          For hundreds of thousands of Chinese families, paying overseas tuition represents
-          one of the most complex financial transactions they will undertake. Traditional
-          banking channels are slow, expensive, and opaque. Universities, meanwhile, struggle
-          with fragmented payment collection across currencies and payment methods.
+          For hundreds of thousands of Chinese families, paying overseas tuition represents one of
+          the most complex financial transactions they will undertake. Traditional banking channels
+          are slow, expensive, and opaque. Universities, meanwhile, struggle with fragmented payment
+          collection across currencies and payment methods.
         </p>
         <p>
-          A leading cross-border payment company identified an opportunity to create a
-          purpose-built solution connecting Chinese families with educational institutions
-          worldwide.
+          A leading cross-border payment company identified an opportunity to create a purpose-built
+          solution connecting Chinese families with educational institutions worldwide.
         </p>
 
         <h4>The Approach</h4>
@@ -549,26 +546,26 @@ function PortfolioPage() {
         <p>
           <strong>Consumer Experience</strong>
           <br />
-          The platform supports multiple payment channels familiar to Chinese consumers:
-          UnionPay card payments, Alipay, WeChat Pay, and bank transfers. Real-time currency
-          conversion with transparent exchange rates eliminates hidden fees and uncertainty.
+          The platform supports multiple payment channels familiar to Chinese consumers: UnionPay
+          card payments, Alipay, WeChat Pay, and bank transfers. Real-time currency conversion with
+          transparent exchange rates eliminates hidden fees and uncertainty.
         </p>
 
         <p>
           <strong>Global University Network</strong>
           <br />
-          Through integration with partner networks including Western Union Business
-          Solutions and UnionPay International, the platform connects families to 400+
-          universities and higher education institutions across nine countries spanning North
-          America, Europe, and Asia-Pacific.
+          Through integration with partner networks including Western Union Business Solutions and
+          UnionPay International, the platform connects families to 400+ universities and higher
+          education institutions across nine countries spanning North America, Europe, and
+          Asia-Pacific.
         </p>
 
         <p>
           <strong>Compliance by Design</strong>
           <br />
-          Cross-border payments into and out of China require meticulous attention to
-          regulatory requirements. The platform incorporates automated compliance checks
-          aligned with Chinese foreign exchange regulations and international AML standards.
+          Cross-border payments into and out of China require meticulous attention to regulatory
+          requirements. The platform incorporates automated compliance checks aligned with Chinese
+          foreign exchange regulations and international AML standards.
         </p>
 
         <div className="page-footer">
@@ -593,15 +590,11 @@ function PortfolioPage() {
           </div>
           <div className="impact-card">
             <div className="impact-card__metric">4+ Payment Methods</div>
-            <div className="impact-card__label">
-              UnionPay, Alipay, WeChat Pay, Bank Transfer
-            </div>
+            <div className="impact-card__label">UnionPay, Alipay, WeChat Pay, Bank Transfer</div>
           </div>
           <div className="impact-card">
             <div className="impact-card__metric">Real-Time FX</div>
-            <div className="impact-card__label">
-              Transparent exchange rates with no hidden fees
-            </div>
+            <div className="impact-card__label">Transparent exchange rates with no hidden fees</div>
           </div>
           <div className="impact-card">
             <div className="impact-card__metric">Fully Compliant</div>
@@ -622,8 +615,7 @@ function PortfolioPage() {
           <div className="highlight-box__title">Partner Ecosystem</div>
           <p style={{ marginBottom: 0 }}>
             The platform operates in partnership with major global payment networks, providing
-            end-to-end payment services from Chinese consumers to global educational
-            institutions.
+            end-to-end payment services from Chinese consumers to global educational institutions.
           </p>
         </div>
 
@@ -667,47 +659,45 @@ function PortfolioPage() {
 
         <h4>The Challenge</h4>
         <p>
-          Global enterprises increasingly need to pay vendors, partners, and employees in
-          China—but traditional banking infrastructure moves too slowly, costs too much, and
-          lacks the flexibility modern businesses require. The client sought to create an
-          API-first solution enabling foreign companies to initiate compliant, cost-effective
-          payments to Chinese recipients.
+          Global enterprises increasingly need to pay vendors, partners, and employees in China—but
+          traditional banking infrastructure moves too slowly, costs too much, and lacks the
+          flexibility modern businesses require. The client sought to create an API-first solution
+          enabling foreign companies to initiate compliant, cost-effective payments to Chinese
+          recipients.
         </p>
 
         <h4>The Approach</h4>
         <p>
-          We architected and delivered a comprehensive B2B payment platform encompassing
-          APIs, administrative tooling, and compliance infrastructure.
+          We architected and delivered a comprehensive B2B payment platform encompassing APIs,
+          administrative tooling, and compliance infrastructure.
         </p>
 
         <p>
           <strong>Enterprise API Suite</strong>
           <br />
-          The REST API platform enables programmatic payment initiation with sophisticated
-          business logic:
+          The REST API platform enables programmatic payment initiation with sophisticated business
+          logic:
         </p>
         <ul>
           <li>
-            <strong>Dynamic Fee Calculation:</strong> Configurable transaction fee structures
-            with markup rules
+            <strong>Dynamic Fee Calculation:</strong> Configurable transaction fee structures with
+            markup rules
           </li>
           <li>
-            <strong>Real-Time FX Management:</strong> Live exchange rates with spread
-            configuration
+            <strong>Real-Time FX Management:</strong> Live exchange rates with spread configuration
           </li>
           <li>
-            <strong>Wallet Functionality:</strong> Pre-funded balance management for
-            high-volume senders
+            <strong>Wallet Functionality:</strong> Pre-funded balance management for high-volume
+            senders
           </li>
         </ul>
 
         <p>
           <strong>Compliance & Security Infrastructure</strong>
           <br />
-          Financial services demand rigorous security and auditability. We implemented
-          maker/checker workflows for dual-approval fund management, complete audit trails
-          for regulatory reporting, and architecture enabling successful PCI DSS
-          certification.
+          Financial services demand rigorous security and auditability. We implemented maker/checker
+          workflows for dual-approval fund management, complete audit trails for regulatory
+          reporting, and architecture enabling successful PCI DSS certification.
         </p>
 
         <div className="page-footer">
@@ -726,9 +716,9 @@ function PortfolioPage() {
         <p>
           <strong>Operations Portal</strong>
           <br />
-          The administrative interface provides real-time rate monitoring, transaction
-          tracking, and comprehensive compliance reporting—giving operations teams full
-          visibility into payment flows.
+          The administrative interface provides real-time rate monitoring, transaction tracking, and
+          comprehensive compliance reporting—giving operations teams full visibility into payment
+          flows.
         </p>
 
         <h4>The Impact</h4>
@@ -780,8 +770,8 @@ function PortfolioPage() {
         <div className="highlight-box">
           <div className="highlight-box__title">Platform Capabilities</div>
           <p style={{ marginBottom: 0 }}>
-            A full-featured B2B payment platform enabling foreign companies to pay vendors in
-            China with real-time FX, configurable fees, and complete regulatory compliance.
+            A full-featured B2B payment platform enabling foreign companies to pay vendors in China
+            with real-time FX, configurable fees, and complete regulatory compliance.
           </p>
         </div>
 
@@ -827,17 +817,17 @@ function PortfolioPage() {
 
         <h4>The Challenge</h4>
         <p>
-          For a prestigious global luxury brand, protecting the business from security
-          threats requires constant vigilance. The security operations team relied on
-          email-based alerts generated by existing filtering rules—a system that successfully
-          flagged unusual activities but produced a significant volume of false positives.
+          For a prestigious global luxury brand, protecting the business from security threats
+          requires constant vigilance. The security operations team relied on email-based alerts
+          generated by existing filtering rules—a system that successfully flagged unusual
+          activities but produced a significant volume of false positives.
         </p>
         <p>
-          Security officers faced a daily deluge of alerts arriving in their inboxes. Each
-          case demanded manual investigation: reading through email threads, cross-referencing
-          historical incidents, and determining whether the alert warranted action. Critical
-          alerts risked being buried in overflowing inboxes, and institutional knowledge
-          remained trapped in scattered email chains.
+          Security officers faced a daily deluge of alerts arriving in their inboxes. Each case
+          demanded manual investigation: reading through email threads, cross-referencing historical
+          incidents, and determining whether the alert warranted action. Critical alerts risked
+          being buried in overflowing inboxes, and institutional knowledge remained trapped in
+          scattered email chains.
         </p>
 
         <h4>The Approach</h4>
@@ -849,19 +839,17 @@ function PortfolioPage() {
         <p>
           <strong>Automated Alert Ingestion & Enrichment</strong>
           <br />
-          Using Microsoft Power Automate, we built integration pipelines that capture alerts
-          from the existing email filtering system and ingest them into Microsoft Dataverse.
-          Each alert is automatically enriched with contextual data, creating structured case
-          records.
+          Using Microsoft Power Automate, we built integration pipelines that capture alerts from
+          the existing email filtering system and ingest them into Microsoft Dataverse. Each alert
+          is automatically enriched with contextual data, creating structured case records.
         </p>
 
         <p>
           <strong>Machine Learning Classification</strong>
           <br />
-          Rather than treating every alert equally, we implemented ML models that analyze each
-          case against historical patterns. The system learns from officer feedback,
-          continuously improving its ability to distinguish genuine threats from false
-          positives.
+          Rather than treating every alert equally, we implemented ML models that analyze each case
+          against historical patterns. The system learns from officer feedback, continuously
+          improving its ability to distinguish genuine threats from false positives.
         </p>
 
         <div className="page-footer">
@@ -880,27 +868,26 @@ function PortfolioPage() {
         <p>
           <strong>Real-Time Teams Integration</strong>
           <br />
-          Security officers now receive intelligent notifications directly in Microsoft Teams.
-          Each alert card includes case summary, risk assessment, and one-click action
-          buttons—enabling officers to flag, escalate, or dismiss cases without leaving their
-          workflow.
+          Security officers now receive intelligent notifications directly in Microsoft Teams. Each
+          alert card includes case summary, risk assessment, and one-click action buttons—enabling
+          officers to flag, escalate, or dismiss cases without leaving their workflow.
         </p>
 
         <p>
           <strong>Conversational Intelligence with Copilot Studio</strong>
           <br />
-          We deployed a custom Copilot Studio agent that enables security teams to query
-          historical cases through natural conversation. Officers can ask questions like "Show
-          me similar cases from this user in the past 6 months"—surfacing insights that
-          previously required hours of email archaeology.
+          We deployed a custom Copilot Studio agent that enables security teams to query historical
+          cases through natural conversation. Officers can ask questions like "Show me similar cases
+          from this user in the past 6 months"—surfacing insights that previously required hours of
+          email archaeology.
         </p>
 
         <p>
           <strong>Unified Analytics & Continuous Improvement</strong>
           <br />
-          With all case data consolidated in Dataverse, we delivered Power BI dashboards
-          providing real-time visibility into alert volumes, response times, and team
-          performance. The unified data layer enables continuous refinement of ML models.
+          With all case data consolidated in Dataverse, we delivered Power BI dashboards providing
+          real-time visibility into alert volumes, response times, and team performance. The unified
+          data layer enables continuous refinement of ML models.
         </p>
 
         <h4>The Impact</h4>
@@ -973,17 +960,16 @@ function PortfolioPage() {
 
         <h4>The Challenge</h4>
         <p>
-          A leading financial services firm sought to democratize access to market
-          intelligence. Their internal insights team maintained a wealth of research—market
-          data, analyst reports, trend analyses—that could drive better decision-making across
-          the organization.
+          A leading financial services firm sought to democratize access to market intelligence.
+          Their internal insights team maintained a wealth of research—market data, analyst reports,
+          trend analyses—that could drive better decision-making across the organization.
         </p>
         <p>
           The client initially explored Microsoft Copilot Studio as the foundation for a
-          conversational AI assistant. However, a critical limitation emerged: financial
-          research is inherently visual. Reports are dense with charts, graphs, and data
-          visualizations that convey meaning no text summary can capture. Out-of-the-box,
-          Copilot Studio struggled to interpret these visual elements.
+          conversational AI assistant. However, a critical limitation emerged: financial research is
+          inherently visual. Reports are dense with charts, graphs, and data visualizations that
+          convey meaning no text summary can capture. Out-of-the-box, Copilot Studio struggled to
+          interpret these visual elements.
         </p>
         <p>
           The firm needed an AI assistant that could truly <em>see</em> and understand their
@@ -992,25 +978,25 @@ function PortfolioPage() {
 
         <h4>The Approach</h4>
         <p>
-          We architected and delivered a custom Retrieval-Augmented Generation (RAG) solution
-          with multimodal capabilities.
+          We architected and delivered a custom Retrieval-Augmented Generation (RAG) solution with
+          multimodal capabilities.
         </p>
 
         <p>
           <strong>Multimodal Document Processing Pipeline</strong>
           <br />
           We built a sophisticated ingestion pipeline that processes research documents
-          holistically. Text is extracted and chunked for semantic search, while charts,
-          graphs, and visualizations are processed through computer vision models that
-          generate rich descriptions of visual content.
+          holistically. Text is extracted and chunked for semantic search, while charts, graphs, and
+          visualizations are processed through computer vision models that generate rich
+          descriptions of visual content.
         </p>
 
         <p>
           <strong>Azure AI Search with Vision-Enhanced Indexing</strong>
           <br />
           All processed content—text chunks and visual descriptions alike—flows into Azure AI
-          Search, creating a unified knowledge index that retrieves context from both textual
-          and visual sources.
+          Search, creating a unified knowledge index that retrieves context from both textual and
+          visual sources.
         </p>
 
         <div className="page-footer">
@@ -1029,18 +1015,18 @@ function PortfolioPage() {
         <p>
           <strong>Vision-Capable Language Model Integration</strong>
           <br />
-          For response generation, we integrated vision-capable models that can reference and
-          reason about visual content. When a user asks about market trends, the assistant
-          draws insights from chart analyses, explains visualizations, and synthesizes
-          findings across multiple reports.
+          For response generation, we integrated vision-capable models that can reference and reason
+          about visual content. When a user asks about market trends, the assistant draws insights
+          from chart analyses, explains visualizations, and synthesizes findings across multiple
+          reports.
         </p>
 
         <p>
           <strong>Seamless Conversational Interface</strong>
           <br />
           The final solution delivers a natural chat experience where users can ask complex
-          questions like "What does our Q3 analysis show about emerging market performance?"
-          and receive answers incorporating insights from both written analysis and supporting
+          questions like "What does our Q3 analysis show about emerging market performance?" and
+          receive answers incorporating insights from both written analysis and supporting
           visualizations.
         </p>
 
@@ -1106,8 +1092,8 @@ function PortfolioPage() {
           Ready to Transform Your Business?
         </h1>
         <p className="cover-subtitle">
-          We partner with organizations navigating complex technology transformations in
-          payments, commerce, AI, and financial services.
+          We partner with organizations navigating complex technology transformations in payments,
+          commerce, AI, and financial services.
         </p>
 
         <div style={{ marginTop: "var(--space-xl)", opacity: 0.9 }}>
