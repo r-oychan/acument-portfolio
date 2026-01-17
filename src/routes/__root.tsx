@@ -20,6 +20,12 @@ function RootLayout() {
               Home
             </Link>
             <Link
+              to="/portfolio"
+              className="text-gray-600 hover:text-gray-900 [&.active]:font-semibold [&.active]:text-gray-900"
+            >
+              Portfolio
+            </Link>
+            <Link
               to="/about"
               className="text-gray-600 hover:text-gray-900 [&.active]:font-semibold [&.active]:text-gray-900"
             >
