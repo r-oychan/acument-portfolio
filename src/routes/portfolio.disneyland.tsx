@@ -44,7 +44,7 @@ function DisneylandCaseStudy() {
 
         <div className="case-title-section">
           <div className="case-number">Case Study 01</div>
-          <div className="case-client">Hong Kong Disneyland Resort</div>
+          <div className="case-client">Hong Kong Most Popular Theme Park</div>
           <div className="case-project-title">
             Reimagining the Guest Journey Through End-to-End Digital Commerce
           </div>
@@ -173,7 +173,7 @@ function DisneylandCaseStudy() {
         </div>
 
         <div className="page-footer">
-          <span>Hong Kong Disneyland Resort</span>
+          <span>Hong Kong Most Popular Theme Park</span>
           <span>© 2026 Your Company</span>
         </div>
       </div>

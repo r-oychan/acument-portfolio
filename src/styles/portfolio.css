@@ -108,14 +108,21 @@
    PAGE STRUCTURE
    ============================================================================ */
 .page {
-  width: var(--page-width);
-  min-height: var(--page-height);
-  padding: var(--page-margin);
+  width: 100%;
+  max-width: 1200px;
+  min-height: auto;
+  padding: 2rem;
   margin: 0 auto 2rem;
   background: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: relative;
-  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 1rem;
+    margin: 0 auto 1rem;
+  }
 }
 
 .page--cover {
@@ -163,14 +170,11 @@
 
 /* Page Footer */
 .page-footer {
-  position: absolute;
-  bottom: var(--page-margin);
-  left: var(--page-margin);
-  right: var(--page-margin);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: var(--space-sm);
+  margin-top: var(--space-xl);
   border-top: 1px solid var(--color-border);
   font-size: 0.7rem;
   color: var(--color-text-muted);
@@ -194,6 +198,13 @@
   background: var(--color-bg-elevated);
   border-left: 4px solid var(--color-accent);
   margin-bottom: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .case-meta {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
 }
 
 .case-meta__item {
@@ -243,8 +254,21 @@
   gap: var(--space-lg);
 }
 
+@media (max-width: 768px) {
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
 .two-col--wide-left {
   grid-template-columns: 1.2fr 0.8fr;
+}
+
+@media (max-width: 768px) {
+  .two-col--wide-left {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Impact Grid */
@@ -253,6 +277,12 @@
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-sm);
   margin-top: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .impact-card {
@@ -395,8 +425,7 @@
 }
 
 .cover-date {
-  position: absolute;
-  bottom: calc(var(--page-margin) + 40px);
+  margin-top: var(--space-xl);
   font-size: 0.8rem;
   opacity: 0.7;
 }
@@ -447,6 +476,7 @@
     height: 297mm;
     min-height: 297mm;
     max-height: 297mm;
+    max-width: none;
     margin: 0;
     padding: 15mm 20mm 20mm 20mm;
     box-shadow: none;
@@ -456,9 +486,17 @@
   }
 
   .page-footer {
+    position: absolute;
     bottom: 15mm;
     left: 20mm;
     right: 20mm;
+    margin-top: 0;
+  }
+
+  .cover-date {
+    position: absolute;
+    bottom: calc(15mm + 40px);
+    margin-top: 0;
   }
 
   .portfolio-page table {
@@ -467,6 +505,19 @@
 
   .impact-grid {
     page-break-inside: avoid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .case-meta {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .two-col {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .two-col--wide-left {
+    grid-template-columns: 1.2fr 0.8fr;
   }
 
   .portfolio-page p {
