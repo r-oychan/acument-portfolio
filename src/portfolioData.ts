@@ -73,9 +73,7 @@ export const portfolioItems: PortfolioItem[] = [
 ];
 
 // Extract all unique tags for filtering
-export const allTags = Array.from(
-  new Set(portfolioItems.flatMap((item) => item.tags))
-).sort();
+export const allTags = Array.from(new Set(portfolioItems.flatMap((item) => item.tags))).sort();
 
 // Extract all unique industries
 export const allIndustries = Array.from(

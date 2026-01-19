@@ -64,15 +64,12 @@ function PortfolioPage() {
     return portfolioItems.filter((item) => {
       // Filter by selected tags
       const matchesTags =
-        selectedTags.length === 0 ||
-        selectedTags.some((tag) => item.tags.includes(tag));
+        selectedTags.length === 0 || selectedTags.some((tag) => item.tags.includes(tag));
 
       // Filter by search query (search in tags, client name, description)
       const matchesSearch =
         searchQuery === "" ||
-        item.tags.some((tag) =>
-          tag.toLowerCase().includes(searchQuery.toLowerCase())
-        ) ||
+        item.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
         item.clientName.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.industry.toLowerCase().includes(searchQuery.toLowerCase());
@@ -200,9 +197,7 @@ function PortfolioPage() {
                   style={{
                     padding: "0.5rem 1rem",
                     fontSize: "0.85rem",
-                    background: selectedTags.includes(tag)
-                      ? "var(--color-primary)"
-                      : "#f5f5f5",
+                    background: selectedTags.includes(tag) ? "var(--color-primary)" : "#f5f5f5",
                     color: selectedTags.includes(tag) ? "white" : "var(--color-text)",
                     border: selectedTags.includes(tag)
                       ? "1px solid var(--color-primary)"
