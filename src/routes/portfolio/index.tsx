@@ -1,12 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { useEffect, useState, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import "@/styles/portfolio.css";
+import { portfolioItems, allTags } from "@/portfolioData";
 
 export const Route = createFileRoute("/portfolio/")({
   component: PortfolioPage,
 });
 
 function PortfolioPage() {
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [searchQuery, setSearchQuery] = useState("");
+
   useEffect(() => {
     // Load Google Fonts
     const link1 = document.createElement("link");
@@ -32,6 +37,41 @@ function PortfolioPage() {
       document.head.removeChild(link3);
     };
   }, []);
+
+  // Toggle tag selection
+  const toggleTag = (tag: string) => {
+    setSelectedTags((prev) =>
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
+    );
+  };
+
+  // Clear all filters
+  const clearFilters = () => {
+    setSelectedTags([]);
+    setSearchQuery("");
+  };
+
+  // Filter portfolio items based on selected tags and search query
+  const filteredItems = useMemo(() => {
+    return portfolioItems.filter((item) => {
+      // Filter by selected tags
+      const matchesTags =
+        selectedTags.length === 0 ||
+        selectedTags.some((tag) => item.tags.includes(tag));
+
+      // Filter by search query (search in tags, client name, description)
+      const matchesSearch =
+        searchQuery === "" ||
+        item.tags.some((tag) =>
+          tag.toLowerCase().includes(searchQuery.toLowerCase())
+        ) ||
+        item.clientName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.industry.toLowerCase().includes(searchQuery.toLowerCase());
+
+      return matchesTags && matchesSearch;
+    });
+  }, [selectedTags, searchQuery]);
 
   return (
     <div className="portfolio-page">
@@ -70,6 +110,120 @@ function PortfolioPage() {
 
         <h2>Contents</h2>
 
+        {/* Filter Section */}
+        <div style={{ marginTop: "var(--space-lg)", marginBottom: "var(--space-lg)" }}>
+          {/* Search Input */}
+          <div style={{ marginBottom: "var(--space-md)" }}>
+            <input
+              type="text"
+              placeholder="Search by tag, industry, or keyword..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              style={{
+                width: "100%",
+                padding: "0.75rem 1rem",
+                fontSize: "0.95rem",
+                border: "1px solid #e0e0e0",
+                borderRadius: "6px",
+                outline: "none",
+                transition: "border-color 0.2s ease",
+              }}
+              onFocus={(e) => {
+                e.target.style.borderColor = "var(--color-primary)";
+              }}
+              onBlur={(e) => {
+                e.target.style.borderColor = "#e0e0e0";
+              }}
+            />
+          </div>
+
+          {/* Tag Filter Chips */}
+          <div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                marginBottom: "0.5rem",
+                fontSize: "0.85rem",
+                color: "var(--color-text-muted)",
+              }}
+            >
+              <span style={{ fontWeight: 500 }}>Filter by tag:</span>
+              {(selectedTags.length > 0 || searchQuery !== "") && (
+                <button
+                  onClick={clearFilters}
+                  style={{
+                    padding: "0.25rem 0.75rem",
+                    fontSize: "0.8rem",
+                    background: "transparent",
+                    color: "var(--color-primary)",
+                    border: "1px solid var(--color-primary)",
+                    borderRadius: "4px",
+                    cursor: "pointer",
+                    transition: "all 0.2s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "var(--color-primary)";
+                    e.currentTarget.style.color = "white";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "transparent";
+                    e.currentTarget.style.color = "var(--color-primary)";
+                  }}
+                >
+                  Clear filters
+                </button>
+              )}
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "0.5rem",
+              }}
+            >
+              {allTags.map((tag) => (
+                <motion.button
+                  key={tag}
+                  onClick={() => toggleTag(tag)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  style={{
+                    padding: "0.5rem 1rem",
+                    fontSize: "0.85rem",
+                    background: selectedTags.includes(tag)
+                      ? "var(--color-primary)"
+                      : "#f5f5f5",
+                    color: selectedTags.includes(tag) ? "white" : "var(--color-text)",
+                    border: selectedTags.includes(tag)
+                      ? "1px solid var(--color-primary)"
+                      : "1px solid #e0e0e0",
+                    borderRadius: "20px",
+                    cursor: "pointer",
+                    transition: "all 0.2s ease",
+                    fontWeight: selectedTags.includes(tag) ? 500 : 400,
+                  }}
+                >
+                  {tag}
+                </motion.button>
+              ))}
+            </div>
+          </div>
+
+          {/* Results count */}
+          <div
+            style={{
+              marginTop: "var(--space-md)",
+              fontSize: "0.9rem",
+              color: "var(--color-text-muted)",
+            }}
+          >
+            Showing {filteredItems.length} of {portfolioItems.length} case studies
+          </div>
+        </div>
+
+        {/* Animated Portfolio Table */}
         <table style={{ marginTop: "var(--space-lg)" }}>
           <thead>
             <tr>
@@ -79,126 +233,40 @@ function PortfolioPage() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <Link
-                  to="/portfolio/disneyland"
-                  className="text-blue-600 hover:text-blue-800 font-semibold"
+            <AnimatePresence mode="popLayout">
+              {filteredItems.map((item) => (
+                <motion.tr
+                  key={item.id}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.3 }}
+                  layout
                 >
-                  Hong Kong Most Popular Theme Park
-                </Link>
-                <br />
-                <em style={{ fontWeight: "normal", color: "var(--color-text-muted)" }}>
-                  Digital Commerce Platform
-                </em>
-              </td>
-              <td>Travel & Hospitality</td>
-              <td style={{ textAlign: "right" }}>
-                <Link to="/portfolio/disneyland" className="text-blue-600 hover:text-blue-800">
-                  →
-                </Link>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <Link
-                  to="/portfolio/mobility"
-                  className="text-blue-600 hover:text-blue-800 font-semibold"
-                >
-                  Leading HK Mobility Platform
-                </Link>
-                <br />
-                <em style={{ fontWeight: "normal", color: "var(--color-text-muted)" }}>
-                  Payment Infrastructure
-                </em>
-              </td>
-              <td>Transportation</td>
-              <td style={{ textAlign: "right" }}>
-                <Link to="/portfolio/mobility" className="text-blue-600 hover:text-blue-800">
-                  →
-                </Link>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <Link
-                  to="/portfolio/tuition"
-                  className="text-blue-600 hover:text-blue-800 font-semibold"
-                >
-                  Cross-Border Payment Company
-                </Link>
-                <br />
-                <em style={{ fontWeight: "normal", color: "var(--color-text-muted)" }}>
-                  International Tuition Payment Portal
-                </em>
-              </td>
-              <td>Financial Services</td>
-              <td style={{ textAlign: "right" }}>
-                <Link to="/portfolio/tuition" className="text-blue-600 hover:text-blue-800">
-                  →
-                </Link>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <Link
-                  to="/portfolio/remittance"
-                  className="text-blue-600 hover:text-blue-800 font-semibold"
-                >
-                  Cross-Border Payment Company
-                </Link>
-                <br />
-                <em style={{ fontWeight: "normal", color: "var(--color-text-muted)" }}>
-                  B2B Remittance API Platform
-                </em>
-              </td>
-              <td>Financial Services</td>
-              <td style={{ textAlign: "right" }}>
-                <Link to="/portfolio/remittance" className="text-blue-600 hover:text-blue-800">
-                  →
-                </Link>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <Link
-                  to="/portfolio/luxury"
-                  className="text-blue-600 hover:text-blue-800 font-semibold"
-                >
-                  Global Luxury Brand
-                </Link>
-                <br />
-                <em style={{ fontWeight: "normal", color: "var(--color-text-muted)" }}>
-                  Security Case Automation
-                </em>
-              </td>
-              <td>Retail & Luxury</td>
-              <td style={{ textAlign: "right" }}>
-                <Link to="/portfolio/luxury" className="text-blue-600 hover:text-blue-800">
-                  →
-                </Link>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <Link
-                  to="/portfolio/financial"
-                  className="text-blue-600 hover:text-blue-800 font-semibold"
-                >
-                  Global Luxury Brand
-                </Link>
-                <br />
-                <em style={{ fontWeight: "normal", color: "var(--color-text-muted)" }}>
-                  Vision-Enabled Brand Intelligence
-                </em>
-              </td>
-              <td>Retail & Luxury</td>
-              <td style={{ textAlign: "right" }}>
-                <Link to="/portfolio/financial" className="text-blue-600 hover:text-blue-800">
-                  →
-                </Link>
-              </td>
-            </tr>
+                  <td>
+                    <Link
+                      to={`/portfolio/${item.id}` as any}
+                      className="text-blue-600 hover:text-blue-800 font-semibold"
+                    >
+                      {item.clientName}
+                    </Link>
+                    <br />
+                    <em style={{ fontWeight: "normal", color: "var(--color-text-muted)" }}>
+                      {item.description}
+                    </em>
+                  </td>
+                  <td>{item.industry}</td>
+                  <td style={{ textAlign: "right" }}>
+                    <Link
+                      to={`/portfolio/${item.id}` as any}
+                      className="text-blue-600 hover:text-blue-800"
+                    >
+                      →
+                    </Link>
+                  </td>
+                </motion.tr>
+              ))}
+            </AnimatePresence>
           </tbody>
         </table>
 
