@@ -8,6 +8,14 @@ export const Route = createFileRoute("/portfolio/")({
   component: PortfolioPage,
 });
 
+type PortfolioRoute =
+  | "/portfolio/disneyland"
+  | "/portfolio/mobility"
+  | "/portfolio/tuition"
+  | "/portfolio/remittance"
+  | "/portfolio/luxury"
+  | "/portfolio/financial";
+
 function PortfolioPage() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -245,7 +253,7 @@ function PortfolioPage() {
                 >
                   <td>
                     <Link
-                      to={`/portfolio/${item.id}` as any}
+                      to={`/portfolio/${item.id}` as PortfolioRoute}
                       className="text-blue-600 hover:text-blue-800 font-semibold"
                     >
                       {item.clientName}
@@ -258,7 +266,7 @@ function PortfolioPage() {
                   <td>{item.industry}</td>
                   <td style={{ textAlign: "right" }}>
                     <Link
-                      to={`/portfolio/${item.id}` as any}
+                      to={`/portfolio/${item.id}` as PortfolioRoute}
                       className="text-blue-600 hover:text-blue-800"
                     >
                       →
