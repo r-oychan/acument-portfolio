@@ -55,7 +55,7 @@ function MobilityCaseStudy() {
           </div>
           <div className="case-meta__item">
             <span className="case-meta__label">Engagement</span>
-            <span className="case-meta__value">Prior Team Work</span>
+            <span className="case-meta__value">Team Work</span>
           </div>
           <div className="case-meta__item">
             <span className="case-meta__label">Focus Areas</span>
