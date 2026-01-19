@@ -69,16 +69,17 @@ function FinancialCaseStudy() {
 
         <h4>The Challenge</h4>
         <p>
-          A prestigious global luxury brand sought to democratize access to brand and market intelligence.
-          Their internal insights team maintained a wealth of research—trend reports, competitor analyses,
-          customer sentiment data—that could drive better decision-making across merchandising, marketing, and retail operations.
+          A prestigious global luxury brand sought to democratize access to brand and market
+          intelligence. Their internal insights team maintained a wealth of research—trend reports,
+          competitor analyses, customer sentiment data—that could drive better decision-making
+          across merchandising, marketing, and retail operations.
         </p>
         <p>
           The client initially explored Microsoft Copilot Studio as the foundation for a
-          conversational AI assistant. However, a critical limitation emerged: luxury brand research is
-          inherently visual. Reports are dense with product imagery, trend boards, and visual analyses that
-          convey meaning no text summary can capture. Out-of-the-box, Copilot Studio struggled to
-          interpret these visual elements.
+          conversational AI assistant. However, a critical limitation emerged: luxury brand research
+          is inherently visual. Reports are dense with product imagery, trend boards, and visual
+          analyses that convey meaning no text summary can capture. Out-of-the-box, Copilot Studio
+          struggled to interpret these visual elements.
         </p>
         <p>
           The brand needed an AI assistant that could truly <em>see</em> and understand their
@@ -121,9 +122,9 @@ function FinancialCaseStudy() {
           <strong>Seamless Conversational Interface</strong>
           <br />
           The final solution delivers a natural chat experience where users can ask complex
-          questions like "What are the emerging color trends for next season based on our competitor analysis?" and
-          receive answers incorporating insights from both written analysis and supporting
-          visualizations.
+          questions like "What are the emerging color trends for next season based on our competitor
+          analysis?" and receive answers incorporating insights from both written analysis and
+          supporting visualizations.
         </p>
 
         <h4>The Impact</h4>
