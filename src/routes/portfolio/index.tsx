@@ -41,7 +41,7 @@ function PortfolioPage() {
           src="https://www.acument.group/assets/web%20images/Asset%2010@300x.png"
           alt="Acument Intelligence"
           className="cover-logo-img"
-          style={{ height: '40px', marginBottom: 'var(--space-lg)' }}
+          style={{ height: "40px", marginBottom: "var(--space-lg)" }}
         />
         <div className="cover-eyebrow">Client Success Stories</div>
         <h1 className="cover-title">Driving Digital Transformation</h1>
