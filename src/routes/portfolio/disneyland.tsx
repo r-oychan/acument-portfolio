@@ -38,7 +38,7 @@ function DisneylandCaseStudy() {
       {/* CASE STUDY: HONG KONG DISNEYLAND - PAGE 1 */}
       <div className="page">
         <div className="page-header">
-          <span className="page-header__logo">Your Company</span>
+          <span className="page-header__logo">Acument Intelligence</span>
           <span className="page-header__title">Case Study</span>
         </div>
 
@@ -174,7 +174,7 @@ function DisneylandCaseStudy() {
 
         <div className="page-footer">
           <span>Hong Kong Most Popular Theme Park</span>
-          <span>© 2026 Your Company</span>
+          <span>© 2026 Acument Intelligence</span>
         </div>
       </div>
     </div>

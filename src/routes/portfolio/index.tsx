@@ -37,7 +37,12 @@ function PortfolioPage() {
     <div className="portfolio-page">
       {/* COVER PAGE */}
       <div className="page page--cover">
-        <div className="cover-logo">Your Company</div>
+        <img
+          src="https://www.acument.group/assets/web%20images/Asset%2010@300x.png"
+          alt="Acument Intelligence"
+          className="cover-logo-img"
+          style={{ height: '40px', marginBottom: 'var(--space-lg)' }}
+        />
         <div className="cover-eyebrow">Client Success Stories</div>
         <h1 className="cover-title">Driving Digital Transformation</h1>
         <p className="cover-subtitle">
@@ -54,7 +59,7 @@ function PortfolioPage() {
       {/* TABLE OF CONTENTS */}
       <div className="page">
         <div className="page-header">
-          <span className="page-header__logo">Your Company</span>
+          <span className="page-header__logo">Acument Intelligence</span>
           <span className="page-header__title">Client Success Stories</span>
         </div>
 
@@ -175,14 +180,14 @@ function PortfolioPage() {
                   to="/portfolio/financial"
                   className="text-blue-600 hover:text-blue-800 font-semibold"
                 >
-                  Financial Services Firm
+                  Global Luxury Brand
                 </Link>
                 <br />
                 <em style={{ fontWeight: "normal", color: "var(--color-text-muted)" }}>
-                  Vision-Enabled Market Intelligence
+                  Vision-Enabled Brand Intelligence
                 </em>
               </td>
-              <td>Financial Services</td>
+              <td>Retail & Luxury</td>
               <td style={{ textAlign: "right" }}>
                 <Link to="/portfolio/financial" className="text-blue-600 hover:text-blue-800">
                   →
@@ -223,7 +228,7 @@ function PortfolioPage() {
         </div>
 
         <div className="page-footer">
-          <span>© 2026 Your Company</span>
+          <span>© 2026 Acument Intelligence</span>
           <span>Page 2</span>
         </div>
       </div>

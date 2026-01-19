@@ -36,7 +36,7 @@ function RemittanceCaseStudy() {
     <div className="portfolio-page">
       <div className="page">
         <div className="page-header">
-          <span className="page-header__logo">Your Company</span>
+          <span className="page-header__logo">Acument Intelligence</span>
           <span className="page-header__title">Case Study</span>
         </div>
 
@@ -172,7 +172,7 @@ function RemittanceCaseStudy() {
 
         <div className="page-footer">
           <span>Cross-Border Payment Company</span>
-          <span>© 2026 Your Company</span>
+          <span>© 2026 Acument Intelligence</span>
         </div>
       </div>
     </div>
