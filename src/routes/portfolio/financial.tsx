@@ -36,22 +36,22 @@ function FinancialCaseStudy() {
     <div className="portfolio-page">
       <div className="page">
         <div className="page-header">
-          <span className="page-header__logo">Your Company</span>
+          <span className="page-header__logo">Acument Intelligence</span>
           <span className="page-header__title">Case Study</span>
         </div>
 
         <div className="case-title-section">
           <div className="case-number">Case Study 06</div>
-          <div className="case-client">Financial Services Firm</div>
+          <div className="case-client">Global Luxury Brand</div>
           <div className="case-project-title">
-            Building a Vision-Enabled AI Assistant for Market Intelligence
+            Building a Vision-Enabled AI Assistant for Brand Intelligence
           </div>
         </div>
 
         <div className="case-meta">
           <div className="case-meta__item">
             <span className="case-meta__label">Industry</span>
-            <span className="case-meta__value">Financial Services</span>
+            <span className="case-meta__value">Retail & Luxury Goods</span>
           </div>
           <div className="case-meta__item">
             <span className="case-meta__label">Engagement</span>
@@ -69,19 +69,19 @@ function FinancialCaseStudy() {
 
         <h4>The Challenge</h4>
         <p>
-          A leading financial services firm sought to democratize access to market intelligence.
-          Their internal insights team maintained a wealth of research—market data, analyst reports,
-          trend analyses—that could drive better decision-making across the organization.
+          A prestigious global luxury brand sought to democratize access to brand and market intelligence.
+          Their internal insights team maintained a wealth of research—trend reports, competitor analyses,
+          customer sentiment data—that could drive better decision-making across merchandising, marketing, and retail operations.
         </p>
         <p>
           The client initially explored Microsoft Copilot Studio as the foundation for a
-          conversational AI assistant. However, a critical limitation emerged: financial research is
-          inherently visual. Reports are dense with charts, graphs, and data visualizations that
+          conversational AI assistant. However, a critical limitation emerged: luxury brand research is
+          inherently visual. Reports are dense with product imagery, trend boards, and visual analyses that
           convey meaning no text summary can capture. Out-of-the-box, Copilot Studio struggled to
           interpret these visual elements.
         </p>
         <p>
-          The firm needed an AI assistant that could truly <em>see</em> and understand their
+          The brand needed an AI assistant that could truly <em>see</em> and understand their
           research—not just read it.
         </p>
 
@@ -121,7 +121,7 @@ function FinancialCaseStudy() {
           <strong>Seamless Conversational Interface</strong>
           <br />
           The final solution delivers a natural chat experience where users can ask complex
-          questions like "What does our Q3 analysis show about emerging market performance?" and
+          questions like "What are the emerging color trends for next season based on our competitor analysis?" and
           receive answers incorporating insights from both written analysis and supporting
           visualizations.
         </p>
@@ -161,7 +161,7 @@ function FinancialCaseStudy() {
 
         <blockquote>
           <p>
-            The solution unlocked the full value of the firm&apos;s research library—transforming
+            The solution unlocked the full value of the brand&apos;s research library—transforming
             static reports into an interactive, queryable intelligence asset.
           </p>
         </blockquote>
@@ -176,7 +176,7 @@ function FinancialCaseStudy() {
 
         <div className="page-footer">
           <span>Confidential Client</span>
-          <span>© 2026 Your Company</span>
+          <span>© 2026 Acument Intelligence</span>
         </div>
       </div>
     </div>
