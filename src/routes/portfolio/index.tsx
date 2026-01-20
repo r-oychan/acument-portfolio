@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "@/styles/portfolio.css";
-import { portfolioItems, allTags } from "@/portfolioData";
+import { portfolioItems, allTags, allIndustries } from "@/portfolioData";
 
 export const Route = createFileRoute("/portfolio/")({
   component: PortfolioPage,
@@ -18,6 +18,7 @@ type PortfolioRoute =
 
 function PortfolioPage() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [selectedIndustries, setSelectedIndustries] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
@@ -53,18 +54,30 @@ function PortfolioPage() {
     );
   };
 
+  // Toggle industry selection
+  const toggleIndustry = (industry: string) => {
+    setSelectedIndustries((prev) =>
+      prev.includes(industry) ? prev.filter((i) => i !== industry) : [...prev, industry]
+    );
+  };
+
   // Clear all filters
   const clearFilters = () => {
     setSelectedTags([]);
+    setSelectedIndustries([]);
     setSearchQuery("");
   };
 
-  // Filter portfolio items based on selected tags and search query
+  // Filter portfolio items based on selected tags, industries, and search query
   const filteredItems = useMemo(() => {
     return portfolioItems.filter((item) => {
       // Filter by selected tags
       const matchesTags =
         selectedTags.length === 0 || selectedTags.some((tag) => item.tags.includes(tag));
+
+      // Filter by selected industries
+      const matchesIndustries =
+        selectedIndustries.length === 0 || selectedIndustries.includes(item.industry);
 
       // Filter by search query (search in tags, client name, description)
       const matchesSearch =
@@ -74,46 +87,33 @@ function PortfolioPage() {
         item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.industry.toLowerCase().includes(searchQuery.toLowerCase());
 
-      return matchesTags && matchesSearch;
+      return matchesTags && matchesIndustries && matchesSearch;
     });
-  }, [selectedTags, searchQuery]);
+  }, [selectedTags, selectedIndustries, searchQuery]);
 
   return (
     <div className="portfolio-page">
-      {/* COVER PAGE */}
-      <div className="page page--cover">
-        <img
-          src="https://www.acument.group/assets/web%20images/Asset%2010@300x.png"
-          alt="Acument Intelligence"
-          className="cover-logo-img"
-          style={{
-            height: "40px",
-            width: "auto",
-            objectFit: "contain",
-            marginBottom: "var(--space-lg)",
-          }}
-        />
-        <div className="cover-eyebrow">Client Success Stories</div>
-        <h1 className="cover-title">Driving Digital Transformation</h1>
-        <p className="cover-subtitle">
-          Case studies demonstrating measurable impact across payments, commerce, and financial
-          services.
-        </p>
-        <div className="cover-date">January 2026</div>
-        <div className="page-footer">
-          <span>Confidential</span>
-          <span>Page 1</span>
-        </div>
-      </div>
-
-      {/* TABLE OF CONTENTS */}
+      {/* PORTFOLIO HEADER */}
       <div className="page">
-        <div className="page-header">
-          <span className="page-header__logo">Acument Intelligence</span>
-          <span className="page-header__title">Client Success Stories</span>
+        <div style={{ marginBottom: "var(--space-lg)" }}>
+          <img
+            src="https://www.acument.group/assets/web%20images/Asset%2010@300x.png"
+            alt="Acument Intelligence"
+            style={{
+              height: "32px",
+              width: "auto",
+              objectFit: "contain",
+              marginBottom: "var(--space-md)",
+            }}
+          />
+          <h1 style={{ fontSize: "2rem", marginBottom: "0.5rem", fontWeight: 600 }}>
+            Client Success Stories
+          </h1>
+          <p style={{ color: "var(--color-text-muted)", fontSize: "1rem", margin: 0 }}>
+            Case studies demonstrating measurable impact across payments, commerce, and financial
+            services.
+          </p>
         </div>
-
-        <h2>Contents</h2>
 
         {/* Filter Section */}
         <div style={{ marginTop: "var(--space-lg)", marginBottom: "var(--space-lg)" }}>
@@ -154,8 +154,8 @@ function PortfolioPage() {
                 color: "var(--color-text-muted)",
               }}
             >
-              <span style={{ fontWeight: 500 }}>Filter by tag:</span>
-              {(selectedTags.length > 0 || searchQuery !== "") && (
+              <span style={{ fontWeight: 500 }}>Filter by:</span>
+              {(selectedTags.length > 0 || selectedIndustries.length > 0 || searchQuery !== "") && (
                 <button
                   onClick={clearFilters}
                   style={{
@@ -216,6 +216,53 @@ function PortfolioPage() {
             </div>
           </div>
 
+          {/* Industry Filter Chips */}
+          <div style={{ marginTop: "var(--space-md)" }}>
+            <div
+              style={{
+                fontSize: "0.85rem",
+                color: "var(--color-text-muted)",
+                marginBottom: "0.5rem",
+                fontWeight: 500,
+              }}
+            >
+              Industry:
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "0.5rem",
+              }}
+            >
+              {allIndustries.map((industry) => (
+                <motion.button
+                  key={industry}
+                  onClick={() => toggleIndustry(industry)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  style={{
+                    padding: "0.5rem 1rem",
+                    fontSize: "0.85rem",
+                    background: selectedIndustries.includes(industry) ? "#e8f0fa" : "#f5f5f5",
+                    color: selectedIndustries.includes(industry)
+                      ? "var(--color-primary)"
+                      : "var(--color-text)",
+                    border: selectedIndustries.includes(industry)
+                      ? "2px solid var(--color-primary)"
+                      : "1px solid #e0e0e0",
+                    borderRadius: "20px",
+                    cursor: "pointer",
+                    transition: "all 0.2s ease",
+                    fontWeight: selectedIndustries.includes(industry) ? 600 : 400,
+                  }}
+                >
+                  {industry}
+                </motion.button>
+              ))}
+            </div>
+          </div>
+
           {/* Results count */}
           <div
             style={{
@@ -232,8 +279,9 @@ function PortfolioPage() {
         <table style={{ marginTop: "var(--space-lg)" }}>
           <thead>
             <tr>
-              <th style={{ width: "50%" }}>Case Study</th>
+              <th style={{ width: "40%" }}>Case Study</th>
               <th>Industry</th>
+              <th>Tags</th>
               <th style={{ textAlign: "right" }}>View</th>
             </tr>
           </thead>
@@ -261,6 +309,26 @@ function PortfolioPage() {
                     </em>
                   </td>
                   <td>{item.industry}</td>
+                  <td>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "0.25rem" }}>
+                      {item.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="tag"
+                          style={{
+                            fontSize: "0.75rem",
+                            padding: "0.25rem 0.5rem",
+                            background: "#f5f5f5",
+                            border: "1px solid #e0e0e0",
+                            borderRadius: "12px",
+                            whiteSpace: "nowrap",
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </td>
                   <td style={{ textAlign: "right" }}>
                     <Link
                       to={`/portfolio/${item.id}` as PortfolioRoute}
