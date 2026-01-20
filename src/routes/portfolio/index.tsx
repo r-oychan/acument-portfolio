@@ -197,15 +197,17 @@ function PortfolioPage() {
                   style={{
                     padding: "0.5rem 1rem",
                     fontSize: "0.85rem",
-                    background: selectedTags.includes(tag) ? "var(--color-primary)" : "#f5f5f5",
-                    color: selectedTags.includes(tag) ? "white" : "var(--color-text)",
+                    background: selectedTags.includes(tag) ? "#e8f0fa" : "#f5f5f5",
+                    color: selectedTags.includes(tag)
+                      ? "var(--color-primary)"
+                      : "var(--color-text)",
                     border: selectedTags.includes(tag)
-                      ? "1px solid var(--color-primary)"
+                      ? "2px solid var(--color-primary)"
                       : "1px solid #e0e0e0",
                     borderRadius: "20px",
                     cursor: "pointer",
                     transition: "all 0.2s ease",
-                    fontWeight: selectedTags.includes(tag) ? 500 : 400,
+                    fontWeight: selectedTags.includes(tag) ? 600 : 400,
                   }}
                 >
                   {tag}
