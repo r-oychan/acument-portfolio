@@ -70,6 +70,16 @@ export const portfolioItems: PortfolioItem[] = [
     engagement: "Team Work",
     tags: ["AI/ML", "Computer Vision", "Automation"],
   },
+  {
+    id: "sourcing",
+    caseNumber: "Case Study 07",
+    clientName: "Global Fashion & Lifestyle Brand",
+    projectTitle: "Sourcing Digital File Storage & Factory Portal",
+    description: "Sourcing Digital File Storage",
+    industry: "Retail & Luxury",
+    engagement: "Direct Engagement",
+    tags: ["SharePoint", "Power Platform", "Automation"],
+  },
 ];
 
 // Extract all unique tags for filtering

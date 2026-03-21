@@ -13,6 +13,7 @@ import { Route as AboutRouteImport } from "./routes/about"
 import { Route as IndexRouteImport } from "./routes/index"
 import { Route as PortfolioIndexRouteImport } from "./routes/portfolio/index"
 import { Route as PortfolioTuitionRouteImport } from "./routes/portfolio/tuition"
+import { Route as PortfolioSourcingRouteImport } from "./routes/portfolio/sourcing"
 import { Route as PortfolioRemittanceRouteImport } from "./routes/portfolio/remittance"
 import { Route as PortfolioMobilityRouteImport } from "./routes/portfolio/mobility"
 import { Route as PortfolioLuxuryRouteImport } from "./routes/portfolio/luxury"
@@ -37,6 +38,11 @@ const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
 const PortfolioTuitionRoute = PortfolioTuitionRouteImport.update({
   id: "/portfolio/tuition",
   path: "/portfolio/tuition",
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioSourcingRoute = PortfolioSourcingRouteImport.update({
+  id: "/portfolio/sourcing",
+  path: "/portfolio/sourcing",
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioRemittanceRoute = PortfolioRemittanceRouteImport.update({
@@ -73,6 +79,7 @@ export interface FileRoutesByFullPath {
   "/portfolio/luxury": typeof PortfolioLuxuryRoute
   "/portfolio/mobility": typeof PortfolioMobilityRoute
   "/portfolio/remittance": typeof PortfolioRemittanceRoute
+  "/portfolio/sourcing": typeof PortfolioSourcingRoute
   "/portfolio/tuition": typeof PortfolioTuitionRoute
   "/portfolio": typeof PortfolioIndexRoute
 }
@@ -84,6 +91,7 @@ export interface FileRoutesByTo {
   "/portfolio/luxury": typeof PortfolioLuxuryRoute
   "/portfolio/mobility": typeof PortfolioMobilityRoute
   "/portfolio/remittance": typeof PortfolioRemittanceRoute
+  "/portfolio/sourcing": typeof PortfolioSourcingRoute
   "/portfolio/tuition": typeof PortfolioTuitionRoute
   "/portfolio": typeof PortfolioIndexRoute
 }
@@ -96,6 +104,7 @@ export interface FileRoutesById {
   "/portfolio/luxury": typeof PortfolioLuxuryRoute
   "/portfolio/mobility": typeof PortfolioMobilityRoute
   "/portfolio/remittance": typeof PortfolioRemittanceRoute
+  "/portfolio/sourcing": typeof PortfolioSourcingRoute
   "/portfolio/tuition": typeof PortfolioTuitionRoute
   "/portfolio/": typeof PortfolioIndexRoute
 }
@@ -109,6 +118,7 @@ export interface FileRouteTypes {
     | "/portfolio/luxury"
     | "/portfolio/mobility"
     | "/portfolio/remittance"
+    | "/portfolio/sourcing"
     | "/portfolio/tuition"
     | "/portfolio"
   fileRoutesByTo: FileRoutesByTo
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
     | "/portfolio/luxury"
     | "/portfolio/mobility"
     | "/portfolio/remittance"
+    | "/portfolio/sourcing"
     | "/portfolio/tuition"
     | "/portfolio"
   id:
@@ -131,6 +142,7 @@ export interface FileRouteTypes {
     | "/portfolio/luxury"
     | "/portfolio/mobility"
     | "/portfolio/remittance"
+    | "/portfolio/sourcing"
     | "/portfolio/tuition"
     | "/portfolio/"
   fileRoutesById: FileRoutesById
@@ -143,6 +155,7 @@ export interface RootRouteChildren {
   PortfolioLuxuryRoute: typeof PortfolioLuxuryRoute
   PortfolioMobilityRoute: typeof PortfolioMobilityRoute
   PortfolioRemittanceRoute: typeof PortfolioRemittanceRoute
+  PortfolioSourcingRoute: typeof PortfolioSourcingRoute
   PortfolioTuitionRoute: typeof PortfolioTuitionRoute
   PortfolioIndexRoute: typeof PortfolioIndexRoute
 }
@@ -175,6 +188,13 @@ declare module "@tanstack/react-router" {
       path: "/portfolio/tuition"
       fullPath: "/portfolio/tuition"
       preLoaderRoute: typeof PortfolioTuitionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    "/portfolio/sourcing": {
+      id: "/portfolio/sourcing"
+      path: "/portfolio/sourcing"
+      fullPath: "/portfolio/sourcing"
+      preLoaderRoute: typeof PortfolioSourcingRouteImport
       parentRoute: typeof rootRouteImport
     }
     "/portfolio/remittance": {
@@ -223,6 +243,7 @@ const rootRouteChildren: RootRouteChildren = {
   PortfolioLuxuryRoute: PortfolioLuxuryRoute,
   PortfolioMobilityRoute: PortfolioMobilityRoute,
   PortfolioRemittanceRoute: PortfolioRemittanceRoute,
+  PortfolioSourcingRoute: PortfolioSourcingRoute,
   PortfolioTuitionRoute: PortfolioTuitionRoute,
   PortfolioIndexRoute: PortfolioIndexRoute,
 }
