@@ -87,9 +87,11 @@ Available in `.claude/skills/`:
 
 | Command | Source | Description |
 |---------|--------|-------------|
-| `/pdf` | Custom | Generate PDF documents from markdown, HTML, or structured content |
-| `/ppt` | Custom | Generate PowerPoint (.pptx) presentations programmatically |
-| `/vercel-react-best-practices` | [vercel-labs](https://github.com/vercel-labs/agent-skills) | React & Next.js performance optimization (64 rules across 8 categories) |
+| `/pdf` | [anthropics](https://github.com/anthropics/skills) | Read, create, merge, split, fill forms, OCR, watermark PDF files |
+| `/docx` | [anthropics](https://github.com/anthropics/skills) | Create, read, edit, and manipulate Word documents (.docx) |
+| `/pptx` | [anthropics](https://github.com/anthropics/skills) | Create, read, edit PowerPoint presentations (.pptx) |
+| `/frontend-design` | [anthropics](https://github.com/anthropics/skills) | Create distinctive, production-grade frontend interfaces |
+| `/react-best-practices` | [vercel-labs](https://github.com/vercel-labs/agent-skills) | React & Next.js performance optimization (64 rules across 8 categories) |
 | `/composition-patterns` | [vercel-labs](https://github.com/vercel-labs/agent-skills) | React composition patterns for flexible, maintainable components |
 
 ## Testing
