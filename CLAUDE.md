@@ -85,13 +85,15 @@ On push to `main`:
 
 Available in `.claude/skills/`:
 
-| Command | Description |
-|---------|-------------|
-| `/pdf` | Generate PDF documents from markdown, HTML, or structured content |
-| `/ppt` | Generate PowerPoint (.pptx) presentations programmatically |
-| `/web-design` | Design and build web pages, landing pages, or UI components |
-| `/vercel` | Deploy, configure, and manage Vercel projects |
-| `/react-best-practices` | Review React code for anti-patterns and suggest improvements |
+| Command | Source | Description |
+|---------|--------|-------------|
+| `/pdf` | Custom | Generate PDF documents from markdown, HTML, or structured content |
+| `/ppt` | Custom | Generate PowerPoint (.pptx) presentations programmatically |
+| `/vercel-react-best-practices` | [vercel-labs](https://github.com/vercel-labs/agent-skills) | React & Next.js performance optimization (64 rules across 8 categories) |
+| `/composition-patterns` | [vercel-labs](https://github.com/vercel-labs/agent-skills) | React composition patterns for flexible, maintainable components |
+| `/deploy-to-vercel` | [vercel-labs](https://github.com/vercel-labs/agent-skills) | Deploy projects to Vercel with auto-detection and configuration |
+| `/vercel-cli-with-tokens` | [vercel-labs](https://github.com/vercel-labs/agent-skills) | Vercel CLI with token-based auth (no `vercel login` required) |
+| `/web-design-guidelines` | [vercel-labs](https://github.com/vercel-labs/agent-skills) | Audit UI code against Web Interface Guidelines |
 
 ## Testing
 
