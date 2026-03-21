@@ -73,6 +73,7 @@ public/
 ## CI/CD Pipeline
 
 On push to `main`:
+
 1. Install dependencies (`bun install`)
 2. Lint check (`bun run lint`)
 3. Format check (`bun run format:check`)
@@ -85,14 +86,14 @@ On push to `main`:
 
 Available in `.claude/skills/`:
 
-| Command | Source | Description |
-|---------|--------|-------------|
-| `/pdf` | [anthropics](https://github.com/anthropics/skills) | Read, create, merge, split, fill forms, OCR, watermark PDF files |
-| `/docx` | [anthropics](https://github.com/anthropics/skills) | Create, read, edit, and manipulate Word documents (.docx) |
-| `/pptx` | [anthropics](https://github.com/anthropics/skills) | Create, read, edit PowerPoint presentations (.pptx) |
-| `/frontend-design` | [anthropics](https://github.com/anthropics/skills) | Create distinctive, production-grade frontend interfaces |
+| Command                 | Source                                                     | Description                                                             |
+| ----------------------- | ---------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `/pdf`                  | [anthropics](https://github.com/anthropics/skills)         | Read, create, merge, split, fill forms, OCR, watermark PDF files        |
+| `/docx`                 | [anthropics](https://github.com/anthropics/skills)         | Create, read, edit, and manipulate Word documents (.docx)               |
+| `/pptx`                 | [anthropics](https://github.com/anthropics/skills)         | Create, read, edit PowerPoint presentations (.pptx)                     |
+| `/frontend-design`      | [anthropics](https://github.com/anthropics/skills)         | Create distinctive, production-grade frontend interfaces                |
 | `/react-best-practices` | [vercel-labs](https://github.com/vercel-labs/agent-skills) | React & Next.js performance optimization (64 rules across 8 categories) |
-| `/composition-patterns` | [vercel-labs](https://github.com/vercel-labs/agent-skills) | React composition patterns for flexible, maintainable components |
+| `/composition-patterns` | [vercel-labs](https://github.com/vercel-labs/agent-skills) | React composition patterns for flexible, maintainable components        |
 
 ## Testing
 
