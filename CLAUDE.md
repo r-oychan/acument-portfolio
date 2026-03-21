@@ -81,6 +81,18 @@ On push to `main`:
 
 **Before pushing, always run:** `bun run lint && bun run format:check && bun run build`
 
+## Custom Skills (Slash Commands)
+
+Available in `.claude/skills/`:
+
+| Command | Description |
+|---------|-------------|
+| `/pdf` | Generate PDF documents from markdown, HTML, or structured content |
+| `/ppt` | Generate PowerPoint (.pptx) presentations programmatically |
+| `/web-design` | Design and build web pages, landing pages, or UI components |
+| `/vercel` | Deploy, configure, and manage Vercel projects |
+| `/react-best-practices` | Review React code for anti-patterns and suggest improvements |
+
 ## Testing
 
 No testing framework is currently configured. If adding tests, use Vitest (Vite-native).
