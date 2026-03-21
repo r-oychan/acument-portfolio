@@ -91,9 +91,6 @@ Available in `.claude/skills/`:
 | `/ppt` | Custom | Generate PowerPoint (.pptx) presentations programmatically |
 | `/vercel-react-best-practices` | [vercel-labs](https://github.com/vercel-labs/agent-skills) | React & Next.js performance optimization (64 rules across 8 categories) |
 | `/composition-patterns` | [vercel-labs](https://github.com/vercel-labs/agent-skills) | React composition patterns for flexible, maintainable components |
-| `/deploy-to-vercel` | [vercel-labs](https://github.com/vercel-labs/agent-skills) | Deploy projects to Vercel with auto-detection and configuration |
-| `/vercel-cli-with-tokens` | [vercel-labs](https://github.com/vercel-labs/agent-skills) | Vercel CLI with token-based auth (no `vercel login` required) |
-| `/web-design-guidelines` | [vercel-labs](https://github.com/vercel-labs/agent-skills) | Audit UI code against Web Interface Guidelines |
 
 ## Testing
 
