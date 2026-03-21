@@ -14,7 +14,8 @@ type PortfolioRoute =
   | "/portfolio/tuition"
   | "/portfolio/remittance"
   | "/portfolio/luxury"
-  | "/portfolio/financial";
+  | "/portfolio/financial"
+  | "/portfolio/sourcing";
 
 function PortfolioPage() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
