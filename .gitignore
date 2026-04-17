@@ -36,3 +36,7 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 # OS
 .DS_Store
+
+# Playwright MCP screenshots / traces (local only)
+.playwright-mcp/
+disneyland-*.png

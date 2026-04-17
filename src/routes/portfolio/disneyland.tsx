@@ -23,11 +23,12 @@ function DisneylandCaseStudy() {
           </div>
         </div>
 
-        <img
-          src="/acument-portfolio/international-theme-park-company/images/castle.png"
-          alt="Illustrated castle silhouette at sunset — the destination at the heart of the guest journey."
-          className="case-hero-image"
-        />
+        <figure className="case-hero">
+          <img
+            src="/acument-portfolio/international-theme-park-company/images/castle.png"
+            alt="Illustrated castle at sunset — the destination at the heart of the guest journey."
+          />
+        </figure>
 
         <div className="case-meta">
           <div className="case-meta__item">
@@ -64,39 +65,43 @@ function DisneylandCaseStudy() {
         </p>
 
         <h4>The Approach</h4>
-        <div className="paragraph-split">
-          <div className="paragraph-split__media">
-            <img
-              src="/acument-portfolio/international-theme-park-company/images/turnstile.png"
-              alt="Guest scanning a mobile QR ticket at a theme-park turnstile — the moment the digital journey meets the physical park."
-            />
-          </div>
-          <div className="paragraph-split__body">
-            <p>
-              We partnered with the resort to architect and deliver a comprehensive digital commerce
-              ecosystem—one that would serve as the foundation for the guest experience from the
-              moment of purchase through park departure.
-            </p>
-          </div>
+        <div className="figure-clear">
+          <figure className="figure-inline">
+            <div className="figure-inline__media">
+              <img
+                src="/acument-portfolio/international-theme-park-company/images/turnstile.png"
+                alt="Guest scanning a mobile QR ticket at a theme-park turnstile."
+              />
+            </div>
+            <figcaption className="figure-inline__caption">
+              FIG. 01 — The moment the digital journey meets the physical park.
+            </figcaption>
+          </figure>
+
+          <p>
+            We partnered with the resort to architect and deliver a comprehensive digital commerce
+            ecosystem—one that would serve as the foundation for the guest experience from the
+            moment of purchase through park departure.
+          </p>
+
+          <p>
+            <strong>Unified Commerce Platform</strong>
+            <br />
+            We designed and implemented a scalable eCommerce engine capable of handling complex
+            product configurations: standalone day tickets, multi-day passes, hotel-and-ticket
+            packages, and premium entitlement bundles including priority access passes and dining
+            credits. The platform integrates seamlessly with the park&apos;s existing ticketing
+            infrastructure.
+          </p>
+
+          <p>
+            <strong>Omnichannel Payment Integration</strong>
+            <br />
+            Recognizing the diverse payment preferences of international visitors, we engineered a
+            payment orchestration layer supporting major credit cards and regional payment
+            methods—ensuring frictionless checkout regardless of guest origin.
+          </p>
         </div>
-
-        <p>
-          <strong>Unified Commerce Platform</strong>
-          <br />
-          We designed and implemented a scalable eCommerce engine capable of handling complex
-          product configurations: standalone day tickets, multi-day passes, hotel-and-ticket
-          packages, and premium entitlement bundles including priority access passes and dining
-          credits. The platform integrates seamlessly with the park&apos;s existing ticketing
-          infrastructure.
-        </p>
-
-        <p>
-          <strong>Omnichannel Payment Integration</strong>
-          <br />
-          Recognizing the diverse payment preferences of international visitors, we engineered a
-          payment orchestration layer supporting major credit cards and regional payment
-          methods—ensuring frictionless checkout regardless of guest origin.
-        </p>
 
         <p>
           <strong>Operations Command Center</strong>

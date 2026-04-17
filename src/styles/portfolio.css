@@ -380,34 +380,69 @@
 }
 
 /* ============================================================================
-   IMAGERY — flat, 0px radius, no shadow
+   IMAGERY — flat, 0px radius, no shadow. All editorial images follow the
+   Carbon 8px grid and sit flush with the content column.
    ============================================================================ */
-.case-hero-image {
+
+/* Cinematic hero band — crop aggressively, 3:1 aspect, max 280px tall.
+   Avoids the "too tall" effect of rendering tall illustrations at full width. */
+.case-hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  max-height: 280px;
+  overflow: hidden;
+  margin: 0 0 48px 0;
+  background: var(--cds-layer-01);
+}
+
+.case-hero img {
   display: block;
   width: 100%;
-  height: auto;
-  margin: 0 0 48px 0;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
   border-radius: 0;
 }
 
-/* 1:1 image paired side-by-side with a paragraph. Image first on desktop,
-   stacks above the paragraph on mobile for reading order. */
-.paragraph-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-items: center;
-  margin: 24px 0;
+@media (max-width: 768px) {
+  .case-hero {
+    aspect-ratio: 16 / 9;
+    max-height: 200px;
+  }
 }
 
-.paragraph-split__media {
+/* Figure — an inline illustration that flows with body text. Floated right
+   so paragraphs wrap around it. Carbon-flat treatment with a Blue 10 offset
+   block behind the image for editorial depth without shadows. */
+.figure-inline {
+  float: right;
+  position: relative;
+  width: 40%;
+  max-width: 340px;
+  margin: 0 0 16px 32px;
+}
+
+.figure-inline::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: -16px;
+  left: 16px;
+  bottom: 40px;
+  background: var(--cds-tag-blue-bg);
+  z-index: 0;
+}
+
+.figure-inline__media {
+  position: relative;
+  z-index: 1;
   aspect-ratio: 1 / 1;
-  width: 100%;
   overflow: hidden;
   background: var(--cds-layer-01);
 }
 
-.paragraph-split__media img {
+.figure-inline__media img {
   display: block;
   width: 100%;
   height: 100%;
@@ -415,18 +450,35 @@
   border-radius: 0;
 }
 
-.paragraph-split__body {
-  margin: 0;
+.figure-inline__caption {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 12px 0 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.16px;
+  line-height: 1.33;
+  color: var(--cds-text-secondary);
 }
 
-.paragraph-split__body p:last-child {
-  margin-bottom: 0;
+/* clearfix so subsequent headings don't wrap under the floated figure */
+.figure-clear::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 @media (max-width: 768px) {
-  .paragraph-split {
-    grid-template-columns: 1fr;
-    gap: 16px;
+  .figure-inline {
+    float: none;
+    width: 100%;
+    max-width: none;
+    margin: 16px 0 24px 0;
+  }
+
+  .figure-inline::before {
+    inset: 8px -8px -8px 8px;
   }
 }
 
