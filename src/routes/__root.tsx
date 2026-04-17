@@ -6,37 +6,120 @@ export const Route = createRootRoute({
 
 function RootLayout() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow-sm print:hidden">
-        <nav className="mx-auto flex max-w-7xl flex-col items-center gap-2 px-4 py-3 sm:flex-row sm:justify-between sm:gap-0 sm:py-4">
-          <Link to="/" className="text-xl font-bold text-gray-900">
-            Portfolio
+    <div style={{ minHeight: "100vh", backgroundColor: "var(--cds-background)" }}>
+      <header
+        style={{
+          backgroundColor: "#161616",
+          height: "48px",
+          display: "flex",
+          alignItems: "center",
+          width: "100%",
+        }}
+      >
+        <nav
+          style={{
+            maxWidth: "1584px",
+            width: "100%",
+            margin: "0 auto",
+            padding: "0 32px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            height: "100%",
+          }}
+        >
+          <Link
+            to="/"
+            style={{
+              fontFamily: "var(--font-sans)",
+              fontSize: "14px",
+              fontWeight: 600,
+              letterSpacing: "0.16px",
+              color: "#ffffff",
+              textDecoration: "none",
+            }}
+          >
+            Acument Portfolio
           </Link>
-          <div className="flex gap-4 sm:gap-6">
-            <Link
-              to="/"
-              className="text-sm text-gray-600 hover:text-gray-900 sm:text-base [&.active]:font-semibold [&.active]:text-gray-900"
+          <div style={{ display: "flex", gap: "0", alignItems: "center" }}>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/portfolio">Portfolio</NavLink>
+            <NavLink to="/about">About</NavLink>
+            <a
+              href="/acument-portfolio/portfolio.pdf"
+              download="portfolio.pdf"
+              data-no-print
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: "14px",
+                fontWeight: 400,
+                letterSpacing: "0.16px",
+                color: "#c6c6c6",
+                textDecoration: "none",
+                padding: "0 16px",
+                height: "48px",
+                display: "flex",
+                alignItems: "center",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "#ffffff";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "#c6c6c6";
+              }}
             >
-              Home
-            </Link>
-            <Link
-              to="/portfolio"
-              className="text-sm text-gray-600 hover:text-gray-900 sm:text-base [&.active]:font-semibold [&.active]:text-gray-900"
-            >
-              Portfolio
-            </Link>
-            <Link
-              to="/about"
-              className="text-sm text-gray-600 hover:text-gray-900 sm:text-base [&.active]:font-semibold [&.active]:text-gray-900"
-            >
-              About
-            </Link>
+              Download PDF
+            </a>
           </div>
         </nav>
       </header>
-      <main className="mx-auto max-w-7xl px-4 py-8 print:max-w-none print:p-0">
+      <main
+        style={{
+          maxWidth: "1584px",
+          margin: "0 auto",
+          padding: "48px 32px",
+        }}
+      >
         <Outlet />
       </main>
     </div>
+  );
+}
+
+function NavLink({ to, children }: { to: string; children: React.ReactNode }) {
+  return (
+    <Link
+      to={to}
+      style={{
+        fontFamily: "var(--font-sans)",
+        fontSize: "14px",
+        fontWeight: 400,
+        color: "#c6c6c6",
+        textDecoration: "none",
+        padding: "0 16px",
+        height: "48px",
+        display: "flex",
+        alignItems: "center",
+        position: "relative",
+      }}
+      activeProps={{
+        style: {
+          color: "#ffffff",
+          borderBottom: "2px solid #ffffff",
+        },
+      }}
+      onMouseEnter={(e) => {
+        if (!e.currentTarget.classList.contains("active")) {
+          e.currentTarget.style.color = "#ffffff";
+        }
+      }}
+      onMouseLeave={(e) => {
+        if (!e.currentTarget.classList.contains("active")) {
+          e.currentTarget.style.color = "#c6c6c6";
+        }
+      }}
+    >
+      {children}
+    </Link>
   );
 }

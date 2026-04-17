@@ -1,5 +1,26 @@
 # CLAUDE.md — Acument Portfolio
 
+## Design System
+
+**When writing or modifying any HTML, JSX, or TSX that involves UI/visual elements, always consult `design.md` first.** The design.md file contains the complete design system (inspired by IBM's Carbon Design System) including color palette, typography rules, component stylings, spacing, layout principles, and responsive behavior. All UI work must conform to the specifications defined there.
+
+## PDF Export
+
+There is **one combined PDF** (`public/portfolio.pdf`) for the entire portfolio. Every page links to it via the download button in the root layout (`__root.tsx`).
+
+When portfolio content changes (routes or components), re-export by running:
+
+```bash
+python ~/.claude/skills/html-to-pdf/scripts/export_pdf.py \
+  --url http://localhost:5173/acument-portfolio/ \
+       http://localhost:5173/acument-portfolio/about \
+  --output public/portfolio.pdf
+```
+
+When adding a new route, add its URL to the export command above (in page order). The download link already appears on all pages via the root layout — no per-page changes needed.
+
+A Claude Code hook is configured to remind you to re-export automatically when `src/routes/` or `src/components/` files change.
+
 ## Project Overview
 
 Portfolio/case study showcase website for Acument Intelligence (fintech, payments, AI/ML). React SPA deployed to GitHub Pages.
@@ -46,9 +67,10 @@ src/
 │       ├── luxury.tsx
 │       └── financial.tsx
 ├── styles/
-│   ├── index.css         # Tailwind imports
+│   ├── index.css         # Tailwind imports + IBM Carbon design tokens
 │   └── portfolio.css     # Custom portfolio styles & CSS variables
 public/
+├── portfolio.pdf         # Combined portfolio PDF (auto-generated)
 ├── 404.html              # SPA routing fallback for GitHub Pages
 └── .nojekyll
 ```
