@@ -23,6 +23,12 @@ function DisneylandCaseStudy() {
           </div>
         </div>
 
+        <img
+          src="/acument-portfolio/international-theme-park-company/images/castle.png"
+          alt="Illustrated castle silhouette at sunset — the destination at the heart of the guest journey."
+          className="case-hero-image"
+        />
+
         <div className="case-meta">
           <div className="case-meta__item">
             <span className="case-meta__label">Industry</span>
@@ -58,11 +64,21 @@ function DisneylandCaseStudy() {
         </p>
 
         <h4>The Approach</h4>
-        <p>
-          We partnered with the resort to architect and deliver a comprehensive digital commerce
-          ecosystem—one that would serve as the foundation for the guest experience from the moment
-          of purchase through park departure.
-        </p>
+        <div className="paragraph-split">
+          <div className="paragraph-split__media">
+            <img
+              src="/acument-portfolio/international-theme-park-company/images/turnstile.png"
+              alt="Guest scanning a mobile QR ticket at a theme-park turnstile — the moment the digital journey meets the physical park."
+            />
+          </div>
+          <div className="paragraph-split__body">
+            <p>
+              We partnered with the resort to architect and deliver a comprehensive digital commerce
+              ecosystem—one that would serve as the foundation for the guest experience from the
+              moment of purchase through park departure.
+            </p>
+          </div>
+        </div>
 
         <p>
           <strong>Unified Commerce Platform</strong>
