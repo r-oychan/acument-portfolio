@@ -1,41 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
 import "@/styles/portfolio.css";
+import { DownloadCaseStudyLink } from "@/components/DownloadCaseStudyLink";
 
 export const Route = createFileRoute("/portfolio/disneyland")({
   component: DisneylandCaseStudy,
 });
 
 function DisneylandCaseStudy() {
-  useEffect(() => {
-    // Load Google Fonts
-    const link1 = document.createElement("link");
-    link1.rel = "preconnect";
-    link1.href = "https://fonts.googleapis.com";
-    document.head.appendChild(link1);
-
-    const link2 = document.createElement("link");
-    link2.rel = "preconnect";
-    link2.href = "https://fonts.gstatic.com";
-    link2.crossOrigin = "anonymous";
-    document.head.appendChild(link2);
-
-    const link3 = document.createElement("link");
-    link3.href =
-      "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap";
-    link3.rel = "stylesheet";
-    document.head.appendChild(link3);
-
-    return () => {
-      document.head.removeChild(link1);
-      document.head.removeChild(link2);
-      document.head.removeChild(link3);
-    };
-  }, []);
-
   return (
     <div className="portfolio-page">
-      {/* CASE STUDY: HONG KONG DISNEYLAND - PAGE 1 */}
       <div className="page">
         <div className="page-header">
           <span className="page-header__logo">Acument Intelligence</span>
@@ -164,13 +137,15 @@ function DisneylandCaseStudy() {
 
         <div className="highlight-box">
           <div className="highlight-box__title">Key Deliverables</div>
-          <ul style={{ margin: 0, paddingLeft: "var(--space-md)" }}>
+          <ul style={{ margin: 0, paddingLeft: "24px" }}>
             <li>Scalable eCommerce platform with complex product configuration</li>
             <li>Multi-gateway payment integration</li>
             <li>Real-time administrative portal</li>
             <li>Guest footprint tracking and redemption analytics</li>
           </ul>
         </div>
+
+        <DownloadCaseStudyLink caseStudyId="disneyland" />
 
         <div className="page-footer">
           <span>Hong Kong Most Popular Theme Park</span>

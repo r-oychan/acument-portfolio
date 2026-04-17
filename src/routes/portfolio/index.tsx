@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "@/styles/portfolio.css";
 import { portfolioItems, allTags, allIndustries } from "@/portfolioData";
@@ -22,65 +22,30 @@ function PortfolioPage() {
   const [selectedIndustries, setSelectedIndustries] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
 
-  useEffect(() => {
-    // Load Google Fonts
-    const link1 = document.createElement("link");
-    link1.rel = "preconnect";
-    link1.href = "https://fonts.googleapis.com";
-    document.head.appendChild(link1);
-
-    const link2 = document.createElement("link");
-    link2.rel = "preconnect";
-    link2.href = "https://fonts.gstatic.com";
-    link2.crossOrigin = "anonymous";
-    document.head.appendChild(link2);
-
-    const link3 = document.createElement("link");
-    link3.href =
-      "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap";
-    link3.rel = "stylesheet";
-    document.head.appendChild(link3);
-
-    return () => {
-      document.head.removeChild(link1);
-      document.head.removeChild(link2);
-      document.head.removeChild(link3);
-    };
-  }, []);
-
-  // Toggle tag selection
   const toggleTag = (tag: string) => {
     setSelectedTags((prev) =>
       prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
     );
   };
 
-  // Toggle industry selection
   const toggleIndustry = (industry: string) => {
     setSelectedIndustries((prev) =>
       prev.includes(industry) ? prev.filter((i) => i !== industry) : [...prev, industry]
     );
   };
 
-  // Clear all filters
   const clearFilters = () => {
     setSelectedTags([]);
     setSelectedIndustries([]);
     setSearchQuery("");
   };
 
-  // Filter portfolio items based on selected tags, industries, and search query
   const filteredItems = useMemo(() => {
     return portfolioItems.filter((item) => {
-      // Filter by selected tags
       const matchesTags =
         selectedTags.length === 0 || selectedTags.some((tag) => item.tags.includes(tag));
-
-      // Filter by selected industries
       const matchesIndustries =
         selectedIndustries.length === 0 || selectedIndustries.includes(item.industry);
-
-      // Filter by search query (search in tags, client name, description)
       const matchesSearch =
         searchQuery === "" ||
         item.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
@@ -94,193 +59,108 @@ function PortfolioPage() {
 
   return (
     <div className="portfolio-page">
-      {/* PORTFOLIO HEADER */}
       <div className="page">
-        <div style={{ marginBottom: "var(--space-lg)" }}>
-          <img
-            src="https://www.acument.group/assets/web%20images/Asset%2010@300x.png"
-            alt="Acument Intelligence"
+        <div className="page-header">
+          <span className="page-header__logo">Acument Intelligence</span>
+          <span className="page-header__title">Client Success Stories</span>
+        </div>
+
+        <div style={{ marginBottom: "48px" }}>
+          <div className="case-number">Portfolio</div>
+          <h1>Client Success Stories</h1>
+          <p
             style={{
-              height: "32px",
-              width: "auto",
-              objectFit: "contain",
-              marginBottom: "var(--space-md)",
+              fontSize: "1rem",
+              color: "var(--cds-text-secondary)",
+              maxWidth: "720px",
+              margin: 0,
             }}
-          />
-          <h1 style={{ fontSize: "2rem", marginBottom: "0.5rem", fontWeight: 600 }}>
-            Client Success Stories
-          </h1>
-          <p style={{ color: "var(--color-text-muted)", fontSize: "1rem", margin: 0 }}>
+          >
             Case studies demonstrating measurable impact across payments, commerce, and financial
             services.
           </p>
         </div>
 
-        {/* Filter Section */}
-        <div style={{ marginTop: "var(--space-lg)", marginBottom: "var(--space-lg)" }}>
-          {/* Search Input */}
-          <div style={{ marginBottom: "var(--space-md)" }}>
-            <input
-              type="text"
-              placeholder="Search by tag, industry, or keyword..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              style={{
-                width: "100%",
-                padding: "0.75rem 1rem",
-                fontSize: "0.95rem",
-                border: "1px solid #e0e0e0",
-                borderRadius: "6px",
-                outline: "none",
-                transition: "border-color 0.2s ease",
-              }}
-              onFocus={(e) => {
-                e.target.style.borderColor = "var(--color-primary)";
-              }}
-              onBlur={(e) => {
-                e.target.style.borderColor = "#e0e0e0";
-              }}
-            />
-          </div>
+        {/* Search */}
+        <div style={{ marginBottom: "32px" }}>
+          <div className="filter-label">Search</div>
+          <input
+            type="text"
+            placeholder="Search by tag, industry, or keyword..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="cds-input"
+          />
+        </div>
 
-          {/* Tag Filter Chips */}
-          <div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                marginBottom: "0.5rem",
-                fontSize: "0.85rem",
-                color: "var(--color-text-muted)",
-              }}
-            >
-              <span style={{ fontWeight: 500 }}>Filter by:</span>
-              {(selectedTags.length > 0 || selectedIndustries.length > 0 || searchQuery !== "") && (
-                <button
-                  onClick={clearFilters}
-                  style={{
-                    padding: "0.25rem 0.75rem",
-                    fontSize: "0.8rem",
-                    background: "transparent",
-                    color: "var(--color-primary)",
-                    border: "1px solid var(--color-primary)",
-                    borderRadius: "4px",
-                    cursor: "pointer",
-                    transition: "all 0.2s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "var(--color-primary)";
-                    e.currentTarget.style.color = "white";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "transparent";
-                    e.currentTarget.style.color = "var(--color-primary)";
-                  }}
-                >
-                  Clear filters
-                </button>
-              )}
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "0.5rem",
-              }}
-            >
-              {allTags.map((tag) => (
-                <motion.button
-                  key={tag}
-                  onClick={() => toggleTag(tag)}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  style={{
-                    padding: "0.5rem 1rem",
-                    fontSize: "0.85rem",
-                    background: selectedTags.includes(tag) ? "#e8f0fa" : "#f5f5f5",
-                    color: selectedTags.includes(tag)
-                      ? "var(--color-primary)"
-                      : "var(--color-text)",
-                    border: selectedTags.includes(tag)
-                      ? "2px solid var(--color-primary)"
-                      : "1px solid #e0e0e0",
-                    borderRadius: "20px",
-                    cursor: "pointer",
-                    transition: "all 0.2s ease",
-                    fontWeight: selectedTags.includes(tag) ? 600 : 400,
-                  }}
-                >
-                  {tag}
-                </motion.button>
-              ))}
-            </div>
-          </div>
-
-          {/* Industry Filter Chips */}
-          <div style={{ marginTop: "var(--space-md)" }}>
-            <div
-              style={{
-                fontSize: "0.85rem",
-                color: "var(--color-text-muted)",
-                marginBottom: "0.5rem",
-                fontWeight: 500,
-              }}
-            >
-              Industry:
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "0.5rem",
-              }}
-            >
-              {allIndustries.map((industry) => (
-                <motion.button
-                  key={industry}
-                  onClick={() => toggleIndustry(industry)}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  style={{
-                    padding: "0.5rem 1rem",
-                    fontSize: "0.85rem",
-                    background: selectedIndustries.includes(industry) ? "#e8f0fa" : "#f5f5f5",
-                    color: selectedIndustries.includes(industry)
-                      ? "var(--color-primary)"
-                      : "var(--color-text)",
-                    border: selectedIndustries.includes(industry)
-                      ? "2px solid var(--color-primary)"
-                      : "1px solid #e0e0e0",
-                    borderRadius: "20px",
-                    cursor: "pointer",
-                    transition: "all 0.2s ease",
-                    fontWeight: selectedIndustries.includes(industry) ? 600 : 400,
-                  }}
-                >
-                  {industry}
-                </motion.button>
-              ))}
-            </div>
-          </div>
-
-          {/* Results count */}
+        {/* Tag filters */}
+        <div style={{ marginBottom: "24px" }}>
           <div
             style={{
-              marginTop: "var(--space-md)",
-              fontSize: "0.9rem",
-              color: "var(--color-text-muted)",
+              display: "flex",
+              alignItems: "center",
+              gap: "16px",
+              marginBottom: "8px",
             }}
           >
-            Showing {filteredItems.length} of {portfolioItems.length} case studies
+            <span className="filter-label" style={{ marginBottom: 0 }}>
+              Filter by tag
+            </span>
+            {(selectedTags.length > 0 || selectedIndustries.length > 0 || searchQuery !== "") && (
+              <button onClick={clearFilters} className="clear-btn">
+                Clear filters
+              </button>
+            )}
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+            {allTags.map((tag) => (
+              <button
+                key={tag}
+                type="button"
+                onClick={() => toggleTag(tag)}
+                className="filter-chip"
+                data-selected={selectedTags.includes(tag)}
+              >
+                {tag}
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* Animated Portfolio Table */}
-        <table style={{ marginTop: "var(--space-lg)" }}>
+        {/* Industry filters */}
+        <div style={{ marginBottom: "32px" }}>
+          <div className="filter-label">Industry</div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+            {allIndustries.map((industry) => (
+              <button
+                key={industry}
+                type="button"
+                onClick={() => toggleIndustry(industry)}
+                className="filter-chip"
+                data-selected={selectedIndustries.includes(industry)}
+              >
+                {industry}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div
+          style={{
+            fontSize: "0.75rem",
+            letterSpacing: "0.32px",
+            color: "var(--cds-text-secondary)",
+            marginBottom: "16px",
+          }}
+        >
+          Showing {filteredItems.length} of {portfolioItems.length} case studies
+        </div>
+
+        {/* Portfolio table */}
+        <table>
           <thead>
             <tr>
-              <th style={{ width: "40%" }}>Case Study</th>
+              <th style={{ width: "45%" }}>Case Study</th>
               <th>Industry</th>
               <th>Tags</th>
               <th style={{ textAlign: "right" }}>View</th>
@@ -291,40 +171,30 @@ function PortfolioPage() {
               {filteredItems.map((item) => (
                 <motion.tr
                   key={item.id}
-                  initial={{ opacity: 0, y: -10 }}
+                  initial={{ opacity: 0, y: -6 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
+                  exit={{ opacity: 0, x: -10 }}
+                  transition={{ duration: 0.2 }}
                   layout
                 >
                   <td>
-                    <Link
-                      to={`/portfolio/${item.id}` as PortfolioRoute}
-                      className="text-blue-600 hover:text-blue-800 font-semibold"
+                    <Link to={`/portfolio/${item.id}` as PortfolioRoute}>{item.clientName}</Link>
+                    <div
+                      style={{
+                        color: "var(--cds-text-secondary)",
+                        fontSize: "0.875rem",
+                        letterSpacing: "0.16px",
+                        marginTop: "4px",
+                      }}
                     >
-                      {item.clientName}
-                    </Link>
-                    <br />
-                    <em style={{ fontWeight: "normal", color: "var(--color-text-muted)" }}>
                       {item.description}
-                    </em>
+                    </div>
                   </td>
                   <td>{item.industry}</td>
                   <td>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: "0.25rem" }}>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "4px" }}>
                       {item.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="tag"
-                          style={{
-                            fontSize: "0.75rem",
-                            padding: "0.25rem 0.5rem",
-                            background: "#f5f5f5",
-                            border: "1px solid #e0e0e0",
-                            borderRadius: "12px",
-                            whiteSpace: "nowrap",
-                          }}
-                        >
+                        <span key={tag} className="tag">
                           {tag}
                         </span>
                       ))}
@@ -333,7 +203,7 @@ function PortfolioPage() {
                   <td style={{ textAlign: "right" }}>
                     <Link
                       to={`/portfolio/${item.id}` as PortfolioRoute}
-                      className="text-blue-600 hover:text-blue-800"
+                      aria-label={`View ${item.clientName} case study`}
                     >
                       →
                     </Link>
@@ -344,9 +214,9 @@ function PortfolioPage() {
           </tbody>
         </table>
 
-        <div style={{ marginTop: "var(--space-xl)" }}>
+        <div style={{ marginTop: "64px" }}>
           <h4>Our Capabilities</h4>
-          <div className="two-col" style={{ marginTop: "var(--space-md)" }}>
+          <div className="two-col" style={{ marginTop: "16px" }}>
             <div>
               <p>
                 <strong>Payment Systems</strong>
@@ -376,7 +246,7 @@ function PortfolioPage() {
 
         <div className="page-footer">
           <span>© 2026 Acument Intelligence</span>
-          <span>Page 2</span>
+          <span>Portfolio</span>
         </div>
       </div>
     </div>

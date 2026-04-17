@@ -1,37 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
 import "@/styles/portfolio.css";
+import { DownloadCaseStudyLink } from "@/components/DownloadCaseStudyLink";
 
 export const Route = createFileRoute("/portfolio/financial")({
   component: FinancialCaseStudy,
 });
 
 function FinancialCaseStudy() {
-  useEffect(() => {
-    const link1 = document.createElement("link");
-    link1.rel = "preconnect";
-    link1.href = "https://fonts.googleapis.com";
-    document.head.appendChild(link1);
-
-    const link2 = document.createElement("link");
-    link2.rel = "preconnect";
-    link2.href = "https://fonts.gstatic.com";
-    link2.crossOrigin = "anonymous";
-    document.head.appendChild(link2);
-
-    const link3 = document.createElement("link");
-    link3.href =
-      "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap";
-    link3.rel = "stylesheet";
-    document.head.appendChild(link3);
-
-    return () => {
-      document.head.removeChild(link1);
-      document.head.removeChild(link2);
-      document.head.removeChild(link3);
-    };
-  }, []);
-
   return (
     <div className="portfolio-page">
       <div className="page">
@@ -122,9 +97,9 @@ function FinancialCaseStudy() {
           <strong>Seamless Conversational Interface</strong>
           <br />
           The final solution delivers a natural chat experience where users can ask complex
-          questions like "What are the emerging color trends for next season based on our competitor
-          analysis?" and receive answers incorporating insights from both written analysis and
-          supporting visualizations.
+          questions like &ldquo;What are the emerging color trends for next season based on our
+          competitor analysis?&rdquo; and receive answers incorporating insights from both written
+          analysis and supporting visualizations.
         </p>
 
         <h4>The Impact</h4>
@@ -174,6 +149,8 @@ function FinancialCaseStudy() {
             document processing • Multimodal embeddings
           </p>
         </div>
+
+        <DownloadCaseStudyLink caseStudyId="financial" />
 
         <div className="page-footer">
           <span>Confidential Client</span>

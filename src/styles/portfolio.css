@@ -1,43 +1,16 @@
 /* ============================================================================
-   CSS VARIABLES
+   PORTFOLIO — IBM Carbon-aligned styles
+   Every element follows the Carbon 2x grid (8px base), flat surfaces with
+   background-color layering instead of shadows, 0px radius on containers,
+   Blue 60 as the sole accent.
    ============================================================================ */
-:root {
-  --color-bg: #ffffff;
-  --color-bg-elevated: #f8f8f8;
-  --color-bg-card: #f5f5f5;
-  --color-text-primary: #0a0a0a;
-  --color-text-secondary: #444444;
-  --color-text-muted: #777777;
-  --color-accent: #0055b8;
-  --color-accent-light: #e8f0fa;
-  --color-border: #e0e0e0;
-  --color-border-light: #eeeeee;
 
-  --font-display: "Instrument Serif", Georgia, serif;
-  --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
-
-  --page-width: 210mm;
-  --page-height: 297mm;
-  --page-margin: 20mm;
-  --content-width: calc(var(--page-width) - 2 * var(--page-margin));
-}
-
-/* ============================================================================
-   PORTFOLIO PAGE SPECIFIC STYLES
-   ============================================================================ */
 .portfolio-page {
-  font-family: var(--font-body);
-  background: #e0e0e0;
-  color: var(--color-text-primary);
-  line-height: 1.6;
+  font-family: var(--font-sans);
+  background: var(--cds-layer-01);
+  color: var(--cds-text-primary);
+  line-height: 1.5;
   font-weight: 400;
-  padding: 2rem;
 }
 
 .portfolio-page * {
@@ -45,110 +18,91 @@
 }
 
 /* ============================================================================
-   TYPOGRAPHY
+   TYPOGRAPHY — Carbon expressive scale
    ============================================================================ */
 .portfolio-page h1,
 .portfolio-page h2,
 .portfolio-page h3,
 .portfolio-page h4 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  color: var(--cds-text-primary);
+  margin: 0;
 }
 
 .portfolio-page h1 {
-  font-size: 2.5rem;
-  margin-bottom: var(--space-md);
+  font-size: 2.625rem; /* 42px Heading 01 */
+  font-weight: 300;
+  line-height: 1.19;
+  letter-spacing: 0;
+  margin-bottom: 24px;
 }
 
 .portfolio-page h2 {
-  font-size: 2rem;
-  margin-bottom: var(--space-sm);
+  font-size: 2rem; /* 32px Heading 02 */
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 16px;
 }
 
 .portfolio-page h3 {
-  font-size: 1.4rem;
-  margin-bottom: var(--space-sm);
-  margin-top: var(--space-lg);
+  font-size: 1.5rem; /* 24px Heading 03 */
+  font-weight: 400;
+  line-height: 1.33;
+  margin-top: 48px;
+  margin-bottom: 16px;
 }
 
 .portfolio-page h4 {
-  font-size: 0.7rem;
-  font-family: var(--font-body);
+  /* Eyebrow/section label */
+  font-size: 0.75rem; /* 12px Caption 01 */
   font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: 0.32px;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--color-accent);
-  margin-top: var(--space-lg);
-  margin-bottom: var(--space-sm);
-  padding-bottom: var(--space-xs);
-  border-bottom: 2px solid var(--color-accent);
-  display: inline-block;
+  color: var(--cds-link-primary);
+  margin-top: 48px;
+  margin-bottom: 16px;
 }
 
 .portfolio-page p {
-  margin-bottom: var(--space-sm);
-  color: var(--color-text-secondary);
-  font-size: 0.95rem;
+  margin: 0 0 16px 0;
+  color: var(--cds-text-primary);
+  font-size: 1rem; /* 16px Body Long 01 */
+  line-height: 1.5;
 }
 
 .portfolio-page strong {
-  color: var(--color-text-primary);
+  color: var(--cds-text-primary);
   font-weight: 600;
 }
 
 .portfolio-page a {
-  color: var(--color-accent);
+  color: var(--cds-link-primary);
   text-decoration: none;
-  cursor: pointer;
-  transition: color 0.2s ease;
+  transition: color 0.15s ease;
 }
 
 .portfolio-page a:hover {
-  color: #003d82;
+  color: var(--cds-link-primary-hover);
   text-decoration: underline;
 }
 
 /* ============================================================================
-   PAGE STRUCTURE
+   PAGE STRUCTURE — flat white surface, no shadow
    ============================================================================ */
 .page {
   width: 100%;
-  max-width: 1200px;
-  min-height: auto;
-  padding: 2rem;
-  margin: 0 auto 2rem;
-  background: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1056px;
+  padding: 48px;
+  margin: 0 auto;
+  background: var(--cds-background);
   position: relative;
 }
 
 @media (max-width: 768px) {
   .page {
-    padding: 1rem;
-    margin: 0 auto 1rem;
+    padding: 24px 16px;
   }
-}
-
-.page--cover {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--color-accent) 0%, #003d82 100%);
-  color: white;
-}
-
-.page--cover h1,
-.page--cover p {
-  color: white;
-}
-
-.page--cover .subtitle {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  max-width: 80%;
 }
 
 /* Page Header */
@@ -156,23 +110,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: var(--space-sm);
-  border-bottom: 1px solid var(--color-border);
-  margin-bottom: var(--space-lg);
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--cds-border-subtle);
+  margin-bottom: 48px;
 }
 
 .page-header__logo {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-style: italic;
-  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.16px;
+  color: var(--cds-text-primary);
 }
 
 .page-header__title {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.32px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-text-muted);
+  color: var(--cds-text-secondary);
 }
 
 /* Page Footer */
@@ -180,110 +136,128 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: var(--space-sm);
-  margin-top: var(--space-xl);
-  border-top: 1px solid var(--color-border);
-  font-size: 0.7rem;
-  color: var(--color-text-muted);
-}
-
-.page--cover .page-footer {
-  border-top-color: rgba(255, 255, 255, 0.3);
-  color: rgba(255, 255, 255, 0.7);
+  padding-top: 16px;
+  margin-top: 64px;
+  border-top: 1px solid var(--cds-border-subtle);
+  font-size: 0.75rem;
+  letter-spacing: 0.32px;
+  color: var(--cds-text-secondary);
 }
 
 /* ============================================================================
    CASE STUDY COMPONENTS
    ============================================================================ */
+.case-title-section {
+  margin-bottom: 48px;
+}
 
-/* Meta Information */
+.case-number {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  color: var(--cds-link-primary);
+  margin-bottom: 16px;
+}
+
+.case-client {
+  font-family: var(--font-sans);
+  font-size: 2.625rem; /* 42px Heading 01 */
+  font-weight: 300;
+  line-height: 1.19;
+  color: var(--cds-text-primary);
+  margin-bottom: 8px;
+}
+
+.case-project-title {
+  font-family: var(--font-sans);
+  font-size: 1.25rem; /* 20px Heading 05 */
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--cds-text-secondary);
+  max-width: 720px;
+}
+
+/* Meta Information — flat Gray 10 card, no border-left, no shadow */
 .case-meta {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-  padding: var(--space-md);
-  background: var(--color-bg-elevated);
-  border-left: 4px solid var(--color-accent);
-  margin-bottom: var(--space-lg);
-}
-
-@media (max-width: 768px) {
-  .case-meta {
-    grid-template-columns: 1fr;
-    gap: var(--space-sm);
-  }
+  gap: 1px;
+  background: var(--cds-border-subtle);
+  margin-bottom: 48px;
 }
 
 .case-meta__item {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  padding: 16px;
+  background: var(--cds-layer-01);
+}
+
+@media (max-width: 768px) {
+  .case-meta {
+    grid-template-columns: 1fr;
+  }
 }
 
 .case-meta__label {
-  font-size: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.32px;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--color-text-muted);
-  font-weight: 600;
+  color: var(--cds-text-secondary);
 }
 
 .case-meta__value {
-  font-size: 0.85rem;
-  color: var(--color-text-primary);
-  font-weight: 500;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.16px;
+  color: var(--cds-text-primary);
 }
 
-/* Tags */
+/* Tags — the lone rounded exception in Carbon */
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-xs);
-  margin-top: var(--space-sm);
+  gap: 4px;
+  margin-top: 4px;
 }
 
 .tag {
   display: inline-flex;
-  padding: 4px 12px;
-  background: var(--color-accent-light);
-  color: var(--color-accent);
-  font-size: 0.65rem;
-  font-weight: 600;
-  border-radius: 100px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  align-items: center;
+  padding: 4px 8px;
+  background: var(--cds-tag-blue-bg);
+  color: var(--cds-link-primary);
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.33;
+  border-radius: 24px;
 }
 
 /* Two Column Layout */
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
+  gap: 32px;
 }
 
 @media (max-width: 768px) {
   .two-col {
     grid-template-columns: 1fr;
-    gap: var(--space-md);
+    gap: 16px;
   }
 }
 
-.two-col--wide-left {
-  grid-template-columns: 1.2fr 0.8fr;
-}
-
-@media (max-width: 768px) {
-  .two-col--wide-left {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Impact Grid */
+/* Impact Grid — flat tiles, layer shift only */
 .impact-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-sm);
-  margin-top: var(--space-md);
+  gap: 1px;
+  background: var(--cds-border-subtle);
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 @media (max-width: 768px) {
@@ -293,66 +267,75 @@
 }
 
 .impact-card {
-  background: var(--color-bg-elevated);
-  padding: var(--space-md);
-  border-top: 3px solid var(--color-accent);
+  background: var(--cds-layer-01);
+  padding: 24px;
 }
 
 .impact-card__metric {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  color: var(--color-accent);
-  margin-bottom: 4px;
+  font-family: var(--font-sans);
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--cds-text-primary);
+  margin-bottom: 8px;
 }
 
 .impact-card__label {
-  font-size: 0.75rem;
-  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.16px;
+  line-height: 1.29;
+  color: var(--cds-text-secondary);
 }
 
-/* Tables */
+/* Tables — Carbon data table */
 .portfolio-page table {
   width: 100%;
   border-collapse: collapse;
-  margin: var(--space-md) 0;
-  font-size: 0.85rem;
+  margin: 16px 0;
+  font-size: 0.875rem;
+  background: var(--cds-background);
 }
 
 .portfolio-page th,
 .portfolio-page td {
-  padding: var(--space-sm);
+  padding: 12px 16px;
   text-align: left;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--cds-border-subtle);
+  letter-spacing: 0.16px;
+  line-height: 1.29;
 }
 
 .portfolio-page th {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-text-muted);
+  font-size: 0.75rem;
   font-weight: 600;
-  background: var(--color-bg-elevated);
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  color: var(--cds-text-primary);
+  background: var(--cds-layer-01);
+  border-bottom: 1px solid var(--cds-border-subtle);
 }
 
 .portfolio-page td {
-  color: var(--color-text-secondary);
+  color: var(--cds-text-primary);
 }
 
-.portfolio-page td:first-child {
-  font-weight: 600;
-  color: var(--color-text-primary);
+.portfolio-page tbody tr:hover {
+  background: var(--cds-layer-01-hover);
 }
 
-/* Blockquote */
+/* Blockquote — Blue 60 left border, no italic serif */
 .portfolio-page blockquote {
-  margin: var(--space-lg) 0;
-  padding: var(--space-md) var(--space-lg);
-  background: var(--color-accent-light);
-  border-left: 4px solid var(--color-accent);
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-style: italic;
-  color: var(--color-text-secondary);
+  margin: 32px 0;
+  padding: 16px 24px;
+  background: var(--cds-layer-01);
+  border-left: 4px solid var(--cds-link-primary);
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.4;
+  color: var(--cds-text-primary);
 }
 
 .portfolio-page blockquote p {
@@ -364,328 +347,223 @@
 /* Lists */
 .portfolio-page ul,
 .portfolio-page ol {
-  margin: var(--space-sm) 0;
-  padding-left: var(--space-lg);
-  color: var(--color-text-secondary);
-  font-size: 0.9rem;
-}
-
-.portfolio-page li {
-  margin-bottom: var(--space-xs);
-}
-
-.portfolio-page li::marker {
-  color: var(--color-accent);
-}
-
-/* Section Divider */
-.divider {
-  height: 1px;
-  background: var(--color-border);
-  margin: var(--space-lg) 0;
-}
-
-/* Highlight Box */
-.highlight-box {
-  background: var(--color-accent-light);
-  padding: var(--space-md);
-  border-radius: 4px;
-  margin: var(--space-md) 0;
-}
-
-.highlight-box__title {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-accent);
-  font-weight: 600;
-  margin-bottom: var(--space-xs);
-}
-
-/* Cover Page Elements */
-.cover-eyebrow {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  opacity: 0.8;
-  margin-bottom: var(--space-md);
-}
-
-.cover-logo {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-style: italic;
-  margin-bottom: var(--space-xl);
-}
-
-.cover-title {
-  font-size: 3rem;
-  line-height: 1.1;
-  margin-bottom: var(--space-md);
-}
-
-.cover-subtitle {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  max-width: 400px;
+  margin: 8px 0 16px 0;
+  padding-left: 24px;
+  color: var(--cds-text-primary);
+  font-size: 1rem;
   line-height: 1.5;
 }
 
-.cover-date {
-  margin-top: var(--space-xl);
-  font-size: 0.8rem;
-  opacity: 0.7;
+.portfolio-page li {
+  margin-bottom: 4px;
 }
 
-/* Case Study Title Page */
-.case-title-section {
-  margin-bottom: var(--space-xl);
+.portfolio-page li::marker {
+  color: var(--cds-link-primary);
 }
 
-.case-number {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--color-accent);
+/* Highlight Box — flat Blue 10 */
+.highlight-box {
+  background: var(--cds-tag-blue-bg);
+  padding: 24px;
+  margin: 24px 0;
+  border-radius: 0;
+}
+
+.highlight-box__title {
+  font-size: 0.75rem;
   font-weight: 600;
-  margin-bottom: var(--space-sm);
-}
-
-.case-client {
-  font-family: var(--font-display);
-  font-size: 2.2rem;
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-xs);
-}
-
-.case-project-title {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-style: italic;
-  color: var(--color-text-secondary);
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  color: var(--cds-link-primary);
+  margin-bottom: 8px;
 }
 
 /* ============================================================================
-   MOBILE SCREEN OPTIMIZATIONS
+   DOWNLOAD BUTTON — Tertiary ghost-blue, 0px radius
+   ============================================================================ */
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--cds-link-primary);
+  background: transparent;
+  color: var(--cds-link-primary);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.16px;
+  text-decoration: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.download-btn:hover {
+  background: var(--cds-link-primary);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.download-btn__icon {
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+/* ============================================================================
+   CARBON INPUT — bottom-border only, 40px height
+   ============================================================================ */
+.cds-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 16px;
+  background: var(--cds-layer-01);
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--cds-text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  letter-spacing: 0.16px;
+  border-radius: 0;
+  outline: none;
+}
+
+.cds-input::placeholder {
+  color: var(--cds-text-placeholder);
+}
+
+.cds-input:hover {
+  border-bottom-color: var(--cds-border-strong);
+}
+
+.cds-input:focus {
+  border-bottom-color: var(--cds-focus);
+}
+
+/* Filter chip — reuses Carbon tag appearance with interactive states */
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: var(--cds-layer-01);
+  color: var(--cds-text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.33;
+  border: 1px solid transparent;
+  border-radius: 24px;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.filter-chip:hover {
+  background: var(--cds-layer-01-hover);
+}
+
+.filter-chip[data-selected="true"] {
+  background: var(--cds-tag-blue-bg);
+  color: var(--cds-link-primary);
+  border-color: var(--cds-link-primary);
+}
+
+.filter-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  color: var(--cds-text-secondary);
+  margin-bottom: 8px;
+}
+
+.clear-btn {
+  height: 32px;
+  padding: 0 12px;
+  background: transparent;
+  color: var(--cds-link-primary);
+  border: 1px solid var(--cds-link-primary);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.32px;
+  border-radius: 0;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.clear-btn:hover {
+  background: var(--cds-link-primary);
+  color: #ffffff;
+}
+
+/* ============================================================================
+   MOBILE
    ============================================================================ */
 @media screen and (max-width: 768px) {
-  .portfolio-page {
-    padding: 0.5rem;
-    background: var(--color-bg);
-  }
-
-  .page {
-    padding: 1rem;
-    margin: 0 0 0.5rem 0;
-    box-shadow: none;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .page--cover {
-    padding: 1.5rem 1rem;
-    min-height: auto;
-  }
-
-  .cover-title {
-    font-size: 2rem;
-  }
-
-  .cover-subtitle {
-    font-size: 1rem;
-  }
-
-  .cover-logo {
-    font-size: 1.2rem;
-    margin-bottom: var(--space-md);
-  }
-
-  .cover-date {
-    margin-top: var(--space-md);
-  }
-
+  .portfolio-page h1,
   .case-client {
-    font-size: 1.6rem;
-  }
-
-  .case-project-title {
-    font-size: 1.1rem;
-  }
-
-  .page-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-    margin-bottom: var(--space-md);
-  }
-
-  .page-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-    margin-top: var(--space-md);
-  }
-
-  .portfolio-page h1 {
-    font-size: 1.8rem;
+    font-size: 2rem; /* 32px */
   }
 
   .portfolio-page h2 {
     font-size: 1.5rem;
   }
 
-  .portfolio-page h3 {
-    font-size: 1.2rem;
-    margin-top: var(--space-md);
+  .page-header {
+    margin-bottom: 24px;
   }
 
-  .portfolio-page h4 {
-    margin-top: var(--space-md);
-  }
-
-  .portfolio-page blockquote {
-    padding: var(--space-sm);
-    margin: var(--space-md) 0;
-    font-size: 0.95rem;
-  }
-
-  .impact-card {
-    padding: var(--space-sm);
-  }
-
-  .impact-card__metric {
-    font-size: 1rem;
-  }
-
-  .highlight-box {
-    padding: var(--space-sm);
-  }
-
-  /* Table mobile optimization */
-  .portfolio-page table {
-    font-size: 0.8rem;
-  }
-
-  .portfolio-page th,
-  .portfolio-page td {
-    padding: var(--space-xs) var(--space-xs);
-  }
-
-  /* Make links more tappable on mobile */
-  .portfolio-page a {
-    padding: 0.25rem 0;
-    display: inline-block;
-  }
-
-  .portfolio-page table a {
-    padding: 0.5rem 0.25rem;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
+  .page-footer {
+    margin-top: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
   }
 }
 
-/* Small mobile devices */
-@media screen and (max-width: 480px) {
-  .portfolio-page {
-    padding: 0.25rem;
-  }
-
-  .page {
-    padding: 0.75rem;
-  }
-
-  .cover-title {
-    font-size: 1.6rem;
-  }
-
-  .case-client {
-    font-size: 1.4rem;
-  }
-
-  .tags {
-    gap: 0.25rem;
-  }
-
-  .tag {
-    font-size: 0.6rem;
-    padding: 3px 8px;
-  }
-}
-
-/* Print Styles */
+/* ============================================================================
+   PRINT
+   ============================================================================ */
 @media print {
   @page {
     size: A4;
-    margin: 0;
+    margin: 12mm 12mm 14mm 12mm;
   }
 
   .portfolio-page {
-    font-size: 10pt;
     background: white;
     padding: 0;
   }
 
   .page {
-    width: 210mm;
-    height: 297mm;
-    min-height: 297mm;
-    max-height: 297mm;
     max-width: none;
+    padding: 0;
     margin: 0;
-    padding: 15mm 20mm 20mm 20mm;
-    box-shadow: none;
-    page-break-after: always;
-    page-break-inside: avoid;
-    overflow: hidden;
-  }
-
-  .page-footer {
-    position: absolute;
-    bottom: 15mm;
-    left: 20mm;
-    right: 20mm;
-    margin-top: 0;
-  }
-
-  .cover-date {
-    position: absolute;
-    bottom: calc(15mm + 40px);
-    margin-top: 0;
-  }
-
-  .portfolio-page table {
-    page-break-inside: avoid;
   }
 
   .impact-grid {
     page-break-inside: avoid;
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .case-meta {
-    grid-template-columns: repeat(3, 1fr);
+    page-break-inside: avoid;
   }
 
-  .two-col {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .two-col--wide-left {
-    grid-template-columns: 1.2fr 0.8fr;
-  }
-
-  .portfolio-page p {
-    orphans: 3;
-    widows: 3;
+  .portfolio-page blockquote {
+    page-break-inside: avoid;
   }
 
   .portfolio-page h2,
   .portfolio-page h3,
   .portfolio-page h4 {
     page-break-after: avoid;
-  }
-
-  .portfolio-page blockquote {
-    page-break-inside: avoid;
   }
 }

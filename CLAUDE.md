@@ -6,18 +6,27 @@
 
 ## PDF Export
 
-There is **one combined PDF** (`public/portfolio.pdf`) for the entire portfolio. Every page links to it via the download button in the root layout (`__root.tsx`).
+Each case study has its **own PDF** at `public/portfolio-{id}.pdf`. Every case study page renders a download button (`DownloadCaseStudyLink`) that links to its own PDF.
 
-When portfolio content changes (routes or components), re-export by running:
+When a case study's content changes, re-export just that PDF, e.g.:
 
 ```bash
 python ~/.claude/skills/html-to-pdf/scripts/export_pdf.py \
-  --url http://localhost:5173/acument-portfolio/ \
-       http://localhost:5173/acument-portfolio/about \
-  --output public/portfolio.pdf
+  --url http://localhost:5173/acument-portfolio/portfolio/disneyland \
+  --output public/portfolio-disneyland.pdf
 ```
 
-When adding a new route, add its URL to the export command above (in page order). The download link already appears on all pages via the root layout — no per-page changes needed.
+To regenerate **all** case-study PDFs in one go:
+
+```bash
+for id in disneyland mobility tuition remittance luxury financial sourcing; do
+  python ~/.claude/skills/html-to-pdf/scripts/export_pdf.py \
+    --url "http://localhost:5173/acument-portfolio/portfolio/$id" \
+    --output "public/portfolio-$id.pdf"
+done
+```
+
+When adding a new case study, add its `id` to the loop above and to the ID list inside `public/`. The download button is added per-page via `<DownloadCaseStudyLink caseStudyId="..." />`.
 
 A Claude Code hook is configured to remind you to re-export automatically when `src/routes/` or `src/components/` files change.
 
@@ -70,7 +79,7 @@ src/
 │   ├── index.css         # Tailwind imports + IBM Carbon design tokens
 │   └── portfolio.css     # Custom portfolio styles & CSS variables
 public/
-├── portfolio.pdf         # Combined portfolio PDF (auto-generated)
+├── portfolio-*.pdf       # Per-case-study PDFs (auto-generated)
 ├── 404.html              # SPA routing fallback for GitHub Pages
 └── .nojekyll
 ```

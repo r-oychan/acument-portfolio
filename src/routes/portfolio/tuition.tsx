@@ -1,37 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
 import "@/styles/portfolio.css";
+import { DownloadCaseStudyLink } from "@/components/DownloadCaseStudyLink";
 
 export const Route = createFileRoute("/portfolio/tuition")({
   component: TuitionCaseStudy,
 });
 
 function TuitionCaseStudy() {
-  useEffect(() => {
-    const link1 = document.createElement("link");
-    link1.rel = "preconnect";
-    link1.href = "https://fonts.googleapis.com";
-    document.head.appendChild(link1);
-
-    const link2 = document.createElement("link");
-    link2.rel = "preconnect";
-    link2.href = "https://fonts.gstatic.com";
-    link2.crossOrigin = "anonymous";
-    document.head.appendChild(link2);
-
-    const link3 = document.createElement("link");
-    link3.href =
-      "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap";
-    link3.rel = "stylesheet";
-    document.head.appendChild(link3);
-
-    return () => {
-      document.head.removeChild(link1);
-      document.head.removeChild(link2);
-      document.head.removeChild(link3);
-    };
-  }, []);
-
   return (
     <div className="portfolio-page">
       <div className="page">
@@ -146,6 +121,8 @@ function TuitionCaseStudy() {
             end-to-end payment services from Chinese consumers to global educational institutions.
           </p>
         </div>
+
+        <DownloadCaseStudyLink caseStudyId="tuition" />
 
         <div className="page-footer">
           <span>Cross-Border Payment Company</span>

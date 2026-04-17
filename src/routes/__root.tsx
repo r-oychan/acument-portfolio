@@ -15,6 +15,7 @@ function RootLayout() {
           alignItems: "center",
           width: "100%",
         }}
+        data-no-print
       >
         <nav
           style={{
@@ -45,31 +46,6 @@ function RootLayout() {
             <NavLink to="/">Home</NavLink>
             <NavLink to="/portfolio">Portfolio</NavLink>
             <NavLink to="/about">About</NavLink>
-            <a
-              href="/acument-portfolio/portfolio.pdf"
-              download="portfolio.pdf"
-              data-no-print
-              style={{
-                fontFamily: "var(--font-sans)",
-                fontSize: "14px",
-                fontWeight: 400,
-                letterSpacing: "0.16px",
-                color: "#c6c6c6",
-                textDecoration: "none",
-                padding: "0 16px",
-                height: "48px",
-                display: "flex",
-                alignItems: "center",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = "#ffffff";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = "#c6c6c6";
-              }}
-            >
-              Download PDF
-            </a>
           </div>
         </nav>
       </header>

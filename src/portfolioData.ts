@@ -9,6 +9,10 @@ export interface PortfolioItem {
   tags: string[];
 }
 
+export function portfolioPdfPath(id: string): string {
+  return `/acument-portfolio/portfolio-${id}.pdf`;
+}
+
 export const portfolioItems: PortfolioItem[] = [
   {
     id: "disneyland",
