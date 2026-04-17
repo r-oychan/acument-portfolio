@@ -1,6 +1,6 @@
 # International Theme Park — case-study imagery
 
-Images for `src/routes/portfolio/disneyland.tsx`. Served at
+Images for `src/routes/portfolio/theme-park.tsx`. Served at
 `/acument-portfolio/international-theme-park-company/images/<file>`.
 
 ## Style
@@ -60,6 +60,6 @@ After adding images, re-export the PDF:
 
 ```bash
 python ~/.claude/skills/html-to-pdf/scripts/export_pdf.py \
-  --url http://localhost:5173/acument-portfolio/portfolio/disneyland \
-  --output public/portfolio-disneyland.pdf
+  --url http://localhost:5173/acument-portfolio/portfolio/theme-park \
+  --output public/portfolio-theme-park.pdf
 ```

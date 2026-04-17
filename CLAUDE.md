@@ -12,14 +12,14 @@ When a case study's content changes, re-export just that PDF, e.g.:
 
 ```bash
 python ~/.claude/skills/html-to-pdf/scripts/export_pdf.py \
-  --url http://localhost:5173/acument-portfolio/portfolio/disneyland \
-  --output public/portfolio-disneyland.pdf
+  --url http://localhost:5173/acument-portfolio/portfolio/theme-park \
+  --output public/portfolio-theme-park.pdf
 ```
 
 To regenerate **all** case-study PDFs in one go:
 
 ```bash
-for id in disneyland mobility tuition remittance luxury financial sourcing; do
+for id in theme-park mobility tuition remittance luxury financial sourcing; do
   python ~/.claude/skills/html-to-pdf/scripts/export_pdf.py \
     --url "http://localhost:5173/acument-portfolio/portfolio/$id" \
     --output "public/portfolio-$id.pdf"
@@ -69,7 +69,7 @@ src/
 │   ├── about.tsx         # About page
 │   └── portfolio/
 │       ├── index.tsx     # Portfolio listing with filters/search
-│       ├── disneyland.tsx
+│       ├── theme-park.tsx
 │       ├── mobility.tsx
 │       ├── tuition.tsx
 │       ├── remittance.tsx

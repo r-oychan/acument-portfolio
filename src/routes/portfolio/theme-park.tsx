@@ -2,11 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import "@/styles/portfolio.css";
 import { DownloadCaseStudyLink } from "@/components/DownloadCaseStudyLink";
 
-export const Route = createFileRoute("/portfolio/disneyland")({
-  component: DisneylandCaseStudy,
+export const Route = createFileRoute("/portfolio/theme-park")({
+  component: ThemeParkCaseStudy,
 });
 
-function DisneylandCaseStudy() {
+function ThemeParkCaseStudy() {
   return (
     <div className="portfolio-page">
       <div className="page">
@@ -17,7 +17,7 @@ function DisneylandCaseStudy() {
 
         <div className="case-title-section">
           <div className="case-number">Case Study 01</div>
-          <div className="case-client">Hong Kong Most Popular Theme Park</div>
+          <div className="case-client">International Theme Park, Hong Kong</div>
           <div className="case-project-title">
             Reimagining the Guest Journey Through End-to-End Digital Commerce
           </div>
@@ -74,7 +74,7 @@ function DisneylandCaseStudy() {
               />
             </div>
             <figcaption className="figure-inline__caption">
-              FIG. 01 — The moment the digital journey meets the physical park.
+              The moment the digital journey meets the physical park.
             </figcaption>
           </figure>
 
@@ -116,7 +116,7 @@ function DisneylandCaseStudy() {
           <strong>Brand-Aligned Experience Design</strong>
           <br />
           Every interface element was crafted in close collaboration with the client&apos;s design
-          teams, ensuring pixel-perfect alignment with Disney&apos;s exacting brand standards and
+          teams, ensuring pixel-perfect alignment with the park&apos;s exacting brand standards and
           user experience principles.
         </p>
 
@@ -166,10 +166,10 @@ function DisneylandCaseStudy() {
           </ul>
         </div>
 
-        <DownloadCaseStudyLink caseStudyId="disneyland" />
+        <DownloadCaseStudyLink caseStudyId="theme-park" />
 
         <div className="page-footer">
-          <span>Hong Kong Most Popular Theme Park</span>
+          <span>International Theme Park, Hong Kong</span>
           <span>© 2026 Acument Intelligence</span>
         </div>
       </div>

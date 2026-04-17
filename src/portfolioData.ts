@@ -15,9 +15,9 @@ export function portfolioPdfPath(id: string): string {
 
 export const portfolioItems: PortfolioItem[] = [
   {
-    id: "disneyland",
+    id: "theme-park",
     caseNumber: "Case Study 01",
-    clientName: "Hong Kong Most Popular Theme Park",
+    clientName: "International Theme Park, Hong Kong",
     projectTitle: "Reimagining the Guest Journey Through End-to-End Digital Commerce",
     description: "Digital Commerce Platform",
     industry: "Travel & Hospitality",

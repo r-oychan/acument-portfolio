@@ -13,12 +13,12 @@ import { Route as AboutRouteImport } from "./routes/about"
 import { Route as IndexRouteImport } from "./routes/index"
 import { Route as PortfolioIndexRouteImport } from "./routes/portfolio/index"
 import { Route as PortfolioTuitionRouteImport } from "./routes/portfolio/tuition"
+import { Route as PortfolioThemeParkRouteImport } from "./routes/portfolio/theme-park"
 import { Route as PortfolioSourcingRouteImport } from "./routes/portfolio/sourcing"
 import { Route as PortfolioRemittanceRouteImport } from "./routes/portfolio/remittance"
 import { Route as PortfolioMobilityRouteImport } from "./routes/portfolio/mobility"
 import { Route as PortfolioLuxuryRouteImport } from "./routes/portfolio/luxury"
 import { Route as PortfolioFinancialRouteImport } from "./routes/portfolio/financial"
-import { Route as PortfolioDisneylandRouteImport } from "./routes/portfolio/disneyland"
 
 const AboutRoute = AboutRouteImport.update({
   id: "/about",
@@ -38,6 +38,11 @@ const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
 const PortfolioTuitionRoute = PortfolioTuitionRouteImport.update({
   id: "/portfolio/tuition",
   path: "/portfolio/tuition",
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioThemeParkRoute = PortfolioThemeParkRouteImport.update({
+  id: "/portfolio/theme-park",
+  path: "/portfolio/theme-park",
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioSourcingRoute = PortfolioSourcingRouteImport.update({
@@ -65,33 +70,28 @@ const PortfolioFinancialRoute = PortfolioFinancialRouteImport.update({
   path: "/portfolio/financial",
   getParentRoute: () => rootRouteImport,
 } as any)
-const PortfolioDisneylandRoute = PortfolioDisneylandRouteImport.update({
-  id: "/portfolio/disneyland",
-  path: "/portfolio/disneyland",
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   "/": typeof IndexRoute
   "/about": typeof AboutRoute
-  "/portfolio/disneyland": typeof PortfolioDisneylandRoute
   "/portfolio/financial": typeof PortfolioFinancialRoute
   "/portfolio/luxury": typeof PortfolioLuxuryRoute
   "/portfolio/mobility": typeof PortfolioMobilityRoute
   "/portfolio/remittance": typeof PortfolioRemittanceRoute
   "/portfolio/sourcing": typeof PortfolioSourcingRoute
+  "/portfolio/theme-park": typeof PortfolioThemeParkRoute
   "/portfolio/tuition": typeof PortfolioTuitionRoute
   "/portfolio": typeof PortfolioIndexRoute
 }
 export interface FileRoutesByTo {
   "/": typeof IndexRoute
   "/about": typeof AboutRoute
-  "/portfolio/disneyland": typeof PortfolioDisneylandRoute
   "/portfolio/financial": typeof PortfolioFinancialRoute
   "/portfolio/luxury": typeof PortfolioLuxuryRoute
   "/portfolio/mobility": typeof PortfolioMobilityRoute
   "/portfolio/remittance": typeof PortfolioRemittanceRoute
   "/portfolio/sourcing": typeof PortfolioSourcingRoute
+  "/portfolio/theme-park": typeof PortfolioThemeParkRoute
   "/portfolio/tuition": typeof PortfolioTuitionRoute
   "/portfolio": typeof PortfolioIndexRoute
 }
@@ -99,12 +99,12 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   "/": typeof IndexRoute
   "/about": typeof AboutRoute
-  "/portfolio/disneyland": typeof PortfolioDisneylandRoute
   "/portfolio/financial": typeof PortfolioFinancialRoute
   "/portfolio/luxury": typeof PortfolioLuxuryRoute
   "/portfolio/mobility": typeof PortfolioMobilityRoute
   "/portfolio/remittance": typeof PortfolioRemittanceRoute
   "/portfolio/sourcing": typeof PortfolioSourcingRoute
+  "/portfolio/theme-park": typeof PortfolioThemeParkRoute
   "/portfolio/tuition": typeof PortfolioTuitionRoute
   "/portfolio/": typeof PortfolioIndexRoute
 }
@@ -113,36 +113,36 @@ export interface FileRouteTypes {
   fullPaths:
     | "/"
     | "/about"
-    | "/portfolio/disneyland"
     | "/portfolio/financial"
     | "/portfolio/luxury"
     | "/portfolio/mobility"
     | "/portfolio/remittance"
     | "/portfolio/sourcing"
+    | "/portfolio/theme-park"
     | "/portfolio/tuition"
     | "/portfolio"
   fileRoutesByTo: FileRoutesByTo
   to:
     | "/"
     | "/about"
-    | "/portfolio/disneyland"
     | "/portfolio/financial"
     | "/portfolio/luxury"
     | "/portfolio/mobility"
     | "/portfolio/remittance"
     | "/portfolio/sourcing"
+    | "/portfolio/theme-park"
     | "/portfolio/tuition"
     | "/portfolio"
   id:
     | "__root__"
     | "/"
     | "/about"
-    | "/portfolio/disneyland"
     | "/portfolio/financial"
     | "/portfolio/luxury"
     | "/portfolio/mobility"
     | "/portfolio/remittance"
     | "/portfolio/sourcing"
+    | "/portfolio/theme-park"
     | "/portfolio/tuition"
     | "/portfolio/"
   fileRoutesById: FileRoutesById
@@ -150,12 +150,12 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  PortfolioDisneylandRoute: typeof PortfolioDisneylandRoute
   PortfolioFinancialRoute: typeof PortfolioFinancialRoute
   PortfolioLuxuryRoute: typeof PortfolioLuxuryRoute
   PortfolioMobilityRoute: typeof PortfolioMobilityRoute
   PortfolioRemittanceRoute: typeof PortfolioRemittanceRoute
   PortfolioSourcingRoute: typeof PortfolioSourcingRoute
+  PortfolioThemeParkRoute: typeof PortfolioThemeParkRoute
   PortfolioTuitionRoute: typeof PortfolioTuitionRoute
   PortfolioIndexRoute: typeof PortfolioIndexRoute
 }
@@ -188,6 +188,13 @@ declare module "@tanstack/react-router" {
       path: "/portfolio/tuition"
       fullPath: "/portfolio/tuition"
       preLoaderRoute: typeof PortfolioTuitionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    "/portfolio/theme-park": {
+      id: "/portfolio/theme-park"
+      path: "/portfolio/theme-park"
+      fullPath: "/portfolio/theme-park"
+      preLoaderRoute: typeof PortfolioThemeParkRouteImport
       parentRoute: typeof rootRouteImport
     }
     "/portfolio/sourcing": {
@@ -225,25 +232,18 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof PortfolioFinancialRouteImport
       parentRoute: typeof rootRouteImport
     }
-    "/portfolio/disneyland": {
-      id: "/portfolio/disneyland"
-      path: "/portfolio/disneyland"
-      fullPath: "/portfolio/disneyland"
-      preLoaderRoute: typeof PortfolioDisneylandRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  PortfolioDisneylandRoute: PortfolioDisneylandRoute,
   PortfolioFinancialRoute: PortfolioFinancialRoute,
   PortfolioLuxuryRoute: PortfolioLuxuryRoute,
   PortfolioMobilityRoute: PortfolioMobilityRoute,
   PortfolioRemittanceRoute: PortfolioRemittanceRoute,
   PortfolioSourcingRoute: PortfolioSourcingRoute,
+  PortfolioThemeParkRoute: PortfolioThemeParkRoute,
   PortfolioTuitionRoute: PortfolioTuitionRoute,
   PortfolioIndexRoute: PortfolioIndexRoute,
 }

@@ -9,7 +9,7 @@ export const Route = createFileRoute("/portfolio/")({
 });
 
 type PortfolioRoute =
-  | "/portfolio/disneyland"
+  | "/portfolio/theme-park"
   | "/portfolio/mobility"
   | "/portfolio/tuition"
   | "/portfolio/remittance"
