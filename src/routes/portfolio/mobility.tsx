@@ -23,6 +23,13 @@ function MobilityCaseStudy() {
           </div>
         </div>
 
+        <figure className="case-hero">
+          <img
+            src="/acument-portfolio/mobility/hero.png"
+            alt="Illustrated commuter heading to their ride — the start of an everyday urban journey."
+          />
+        </figure>
+
         <div className="case-meta">
           <div className="case-meta__item">
             <span className="case-meta__label">Industry</span>
@@ -43,45 +50,73 @@ function MobilityCaseStudy() {
         </div>
 
         <h4>The Challenge</h4>
-        <p>
-          As ride-hailing platforms reshape urban mobility across Asia, the underlying payment
-          infrastructure must deliver reliability, speed, and flexibility at scale. A rapidly
-          growing Hong Kong-based mobility platform required a payment ecosystem capable of
-          supporting its ambitious growth trajectory while navigating the unique complexities of the
-          local market.
-        </p>
-        <p>
-          The platform needed to accept every payment method their riders preferred—from
-          international cards to local digital wallets—while simultaneously managing the intricate
-          financial flows between riders, drivers, and payment networks.
-        </p>
+        <div className="figure-clear">
+          <figure className="figure-inline">
+            <div className="figure-inline__media">
+              <img
+                src="/acument-portfolio/mobility/taxi-lamp.png"
+                alt="Illustrated taxi roof dome — a familiar sight on Hong Kong streets."
+              />
+            </div>
+            <figcaption className="figure-inline__caption">
+              The everyday icon at the heart of urban mobility.
+            </figcaption>
+          </figure>
+
+          <p>
+            As ride-hailing platforms reshape urban mobility across Asia, the underlying payment
+            infrastructure must deliver reliability, speed, and flexibility at scale. A rapidly
+            growing Hong Kong-based mobility platform required a payment ecosystem capable of
+            supporting its ambitious growth trajectory while navigating the unique complexities of
+            the local market.
+          </p>
+          <p>
+            The platform needed to accept every payment method their riders preferred—from
+            international cards to local digital wallets—while simultaneously managing the intricate
+            financial flows between riders, drivers, and payment networks.
+          </p>
+        </div>
 
         <h4>The Approach</h4>
-        <p>
-          We architected and delivered an enterprise-grade payment infrastructure designed for the
-          specific demands of marketplace platforms.
-        </p>
+        <div className="figure-clear">
+          <figure className="figure-inline">
+            <div className="figure-inline__media">
+              <img
+                src="/acument-portfolio/mobility/credit-card-payment.png"
+                alt="Illustrated hand holding a contactless card at a payment moment."
+              />
+            </div>
+            <figcaption className="figure-inline__caption">
+              The tap that settles across every rail.
+            </figcaption>
+          </figure>
 
-        <p>
-          <strong>Multi-Rail Payment Gateway</strong>
-          <br />
-          The solution integrates across the full spectrum of Hong Kong payment methods:
-        </p>
-        <ul>
-          <li>
-            <strong>Card Networks:</strong> Visa, Mastercard, UnionPay (CUP)
-          </li>
-          <li>
-            <strong>Digital Wallets:</strong> Alipay, WeChat Pay
-          </li>
-          <li>
-            <strong>Local Payment Rails:</strong> Octopus Card integration
-          </li>
-        </ul>
-        <p>
-          Both online (in-app) and offline (terminal-based) payment flows are supported through a
-          unified integration layer.
-        </p>
+          <p>
+            We architected and delivered an enterprise-grade payment infrastructure designed for the
+            specific demands of marketplace platforms.
+          </p>
+
+          <p>
+            <strong>Multi-Rail Payment Gateway</strong>
+            <br />
+            The solution integrates across the full spectrum of Hong Kong payment methods:
+          </p>
+          <ul>
+            <li>
+              <strong>Card Networks:</strong> Visa, Mastercard, UnionPay (CUP)
+            </li>
+            <li>
+              <strong>Digital Wallets:</strong> Alipay, WeChat Pay
+            </li>
+            <li>
+              <strong>Local Payment Rails:</strong> Octopus Card integration
+            </li>
+          </ul>
+          <p>
+            Both online (in-app) and offline (terminal-based) payment flows are supported through a
+            unified integration layer.
+          </p>
+        </div>
 
         <p>
           <strong>Master Merchant Architecture</strong>
