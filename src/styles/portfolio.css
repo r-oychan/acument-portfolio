@@ -634,6 +634,9 @@
 
 /* ============================================================================
    PRINT
+   A4 content width (~703px) is below the 768px mobile breakpoint, so the
+   mobile rules would kick in and collapse everything to a single column.
+   These overrides restore the desktop editorial layout within A4.
    ============================================================================ */
 @media print {
   @page {
@@ -652,12 +655,40 @@
     margin: 0;
   }
 
-  .impact-grid {
+  /* Keep the cinematic hero band tight in print */
+  .case-hero {
+    aspect-ratio: 3 / 1;
+    max-height: 220px;
+  }
+
+  /* Keep the floated editorial figure + text wrap in print */
+  .figure-inline {
+    float: right;
+    width: 38%;
+    max-width: none;
+    margin: 0 0 12px 20px;
+  }
+
+  .figure-inline::before {
+    top: 8px;
+    right: -8px;
+    left: 8px;
+    bottom: 32px;
+  }
+
+  /* Keep multi-column grids that the mobile query collapsed */
+  .case-meta {
+    grid-template-columns: repeat(3, 1fr);
     page-break-inside: avoid;
   }
 
-  .case-meta {
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
     page-break-inside: avoid;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr 1fr;
   }
 
   .portfolio-page blockquote {
