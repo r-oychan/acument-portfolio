@@ -23,6 +23,13 @@ function FinancialCaseStudy() {
           </div>
         </div>
 
+        <figure className="case-hero">
+          <img
+            src="/acument-portfolio/luxury-insight-vlm/powerpoint-hero-image.png"
+            alt="Illustrated stack of slide decks — the visual research the assistant learns to read."
+          />
+        </figure>
+
         <div className="case-meta">
           <div className="case-meta__item">
             <span className="case-meta__label">Industry</span>
@@ -62,19 +69,33 @@ function FinancialCaseStudy() {
         </p>
 
         <h4>The Approach</h4>
-        <p>
-          We architected and delivered a custom Retrieval-Augmented Generation (RAG) solution with
-          multimodal capabilities.
-        </p>
+        <div className="figure-clear">
+          <figure className="figure-inline">
+            <div className="figure-inline__media">
+              <img
+                src="/acument-portfolio/luxury-insight-vlm/engagement-level.png"
+                alt="Illustrated engagement-level line chart rising over time."
+              />
+            </div>
+            <figcaption className="figure-inline__caption">
+              The kind of visual insight the assistant can explain in plain language.
+            </figcaption>
+          </figure>
 
-        <p>
-          <strong>Multimodal Document Processing Pipeline</strong>
-          <br />
-          We built a sophisticated ingestion pipeline that processes research documents
-          holistically. Text is extracted and chunked for semantic search, while charts, graphs, and
-          visualizations are processed through computer vision models that generate rich
-          descriptions of visual content.
-        </p>
+          <p>
+            We architected and delivered a custom Retrieval-Augmented Generation (RAG) solution with
+            multimodal capabilities.
+          </p>
+
+          <p>
+            <strong>Multimodal Document Processing Pipeline</strong>
+            <br />
+            We built a sophisticated ingestion pipeline that processes research documents
+            holistically. Text is extracted and chunked for semantic search, while charts, graphs,
+            and visualizations are processed through computer vision models that generate rich
+            descriptions of visual content.
+          </p>
+        </div>
 
         <p>
           <strong>Azure AI Search with Vision-Enhanced Indexing</strong>

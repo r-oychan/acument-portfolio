@@ -23,6 +23,13 @@ function LuxuryCaseStudy() {
           </div>
         </div>
 
+        <figure className="case-hero">
+          <img
+            src="/acument-portfolio/common/laptop-hero-image.png"
+            alt="Illustrated desk with a laptop and a pot plant — the security operations workstation."
+          />
+        </figure>
+
         <div className="case-meta">
           <div className="case-meta__item">
             <span className="case-meta__label">Industry</span>
@@ -58,26 +65,40 @@ function LuxuryCaseStudy() {
         </p>
 
         <h4>The Approach</h4>
-        <p>
-          We designed and implemented an intelligent security case management platform that
-          transforms raw alerts into actionable intelligence.
-        </p>
+        <div className="figure-clear">
+          <figure className="figure-inline">
+            <div className="figure-inline__media">
+              <img
+                src="/acument-portfolio/common/power-platform.png"
+                alt="Illustrated Power Platform app tiles on a pastel watercolor wash."
+              />
+            </div>
+            <figcaption className="figure-inline__caption">
+              Built on Power Automate, Dataverse, Teams, and Copilot Studio.
+            </figcaption>
+          </figure>
 
-        <p>
-          <strong>Automated Alert Ingestion & Enrichment</strong>
-          <br />
-          Using Microsoft Power Automate, we built integration pipelines that capture alerts from
-          the existing email filtering system and ingest them into Microsoft Dataverse. Each alert
-          is automatically enriched with contextual data, creating structured case records.
-        </p>
+          <p>
+            We designed and implemented an intelligent security case management platform that
+            transforms raw alerts into actionable intelligence.
+          </p>
 
-        <p>
-          <strong>Machine Learning Classification</strong>
-          <br />
-          Rather than treating every alert equally, we implemented ML models that analyze each case
-          against historical patterns. The system learns from officer feedback, continuously
-          improving its ability to distinguish genuine threats from false positives.
-        </p>
+          <p>
+            <strong>Automated Alert Ingestion & Enrichment</strong>
+            <br />
+            Using Microsoft Power Automate, we built integration pipelines that capture alerts from
+            the existing email filtering system and ingest them into Microsoft Dataverse. Each alert
+            is automatically enriched with contextual data, creating structured case records.
+          </p>
+
+          <p>
+            <strong>Machine Learning Classification</strong>
+            <br />
+            Rather than treating every alert equally, we implemented ML models that analyze each
+            case against historical patterns. The system learns from officer feedback, continuously
+            improving its ability to distinguish genuine threats from false positives.
+          </p>
+        </div>
 
         <p>
           <strong>Real-Time Teams Integration</strong>

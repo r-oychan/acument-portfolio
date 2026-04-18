@@ -23,6 +23,13 @@ function SourcingCaseStudy() {
           </div>
         </div>
 
+        <figure className="case-hero">
+          <img
+            src="/acument-portfolio/common/laptop-hero-image.png"
+            alt="Illustrated desk with a laptop — the sourcing team's unified digital workspace."
+          />
+        </figure>
+
         <div className="case-meta">
           <div className="case-meta__item">
             <span className="case-meta__label">Industry</span>
@@ -43,36 +50,64 @@ function SourcingCaseStudy() {
         </div>
 
         <h4>The Challenge</h4>
-        <p>
-          A global fashion and lifestyle brand with sourcing operations spanning APAC, EMEA, and
-          North America needed to modernize how its teams manage sourcing documents. Hundreds of
-          external factory partners regularly exchanged PDF files—tech packs, compliance
-          certificates, shipping documents—through fragmented channels with no standardized naming,
-          storage, or retention policies.
-        </p>
-        <p>
-          Internal sourcing teams lacked a unified view of documents across regions. Files were
-          scattered across email threads, local drives, and ad-hoc shared folders. Factory
-          onboarding was manual, file retrieval was time-consuming, and there was no automated
-          mechanism to enforce document retention or generate operational reports.
-        </p>
+        <div className="figure-clear">
+          <figure className="figure-inline">
+            <div className="figure-inline__media">
+              <img
+                src="/acument-portfolio/fashion-sourcing-portal/stack-of-polo-shirt.png"
+                alt="Illustrated stack of folded polo shirts in pastel tones."
+              />
+            </div>
+            <figcaption className="figure-inline__caption">
+              The product lines behind every tech pack, certificate, and shipping file.
+            </figcaption>
+          </figure>
+
+          <p>
+            A global fashion and lifestyle brand with sourcing operations spanning APAC, EMEA, and
+            North America needed to modernize how its teams manage sourcing documents. Hundreds of
+            external factory partners regularly exchanged PDF files—tech packs, compliance
+            certificates, shipping documents—through fragmented channels with no standardized
+            naming, storage, or retention policies.
+          </p>
+          <p>
+            Internal sourcing teams lacked a unified view of documents across regions. Files were
+            scattered across email threads, local drives, and ad-hoc shared folders. Factory
+            onboarding was manual, file retrieval was time-consuming, and there was no automated
+            mechanism to enforce document retention or generate operational reports.
+          </p>
+        </div>
 
         <h4>The Approach</h4>
-        <p>
-          We designed and delivered a centralized, region-based digital file storage platform built
-          on Microsoft SharePoint Online, Power Pages, and Power Automate—providing structured
-          document management with self-service portals for both internal users and external factory
-          partners.
-        </p>
+        <div className="figure-clear">
+          <figure className="figure-inline">
+            <div className="figure-inline__media">
+              <img
+                src="/acument-portfolio/fashion-sourcing-portal/power-platform.png"
+                alt="Illustrated Power Platform app tiles on a pastel watercolor wash."
+              />
+            </div>
+            <figcaption className="figure-inline__caption">
+              SharePoint, Power Pages, and Power Automate doing the heavy lifting.
+            </figcaption>
+          </figure>
 
-        <p>
-          <strong>SharePoint Site Architecture & Taxonomy</strong>
-          <br />
-          We reviewed and guided the setup of a hierarchical SharePoint structure with regional
-          subsites for APAC, EMEA, and NA. Within each subsite, a four-level folder taxonomy
-          organizes documents by merchandise category, product type, factory, and season—ensuring
-          every file lands in a predictable, auditable location.
-        </p>
+          <p>
+            We designed and delivered a centralized, region-based digital file storage platform
+            built on Microsoft SharePoint Online, Power Pages, and Power Automate—providing
+            structured document management with self-service portals for both internal users and
+            external factory partners.
+          </p>
+
+          <p>
+            <strong>SharePoint Site Architecture & Taxonomy</strong>
+            <br />
+            We reviewed and guided the setup of a hierarchical SharePoint structure with regional
+            subsites for APAC, EMEA, and NA. Within each subsite, a four-level folder taxonomy
+            organizes documents by merchandise category, product type, factory, and season—ensuring
+            every file lands in a predictable, auditable location.
+          </p>
+        </div>
 
         <p>
           <strong>Master Data Configuration</strong>

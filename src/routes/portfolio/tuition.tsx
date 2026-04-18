@@ -21,6 +21,13 @@ function TuitionCaseStudy() {
           <div className="case-project-title">International Tuition Payment Portal</div>
         </div>
 
+        <figure className="case-hero">
+          <img
+            src="/acument-portfolio/fintech-tuition-portal/university.png"
+            alt="Illustrated university façade — the destination for cross-border tuition flows."
+          />
+        </figure>
+
         <div className="case-meta">
           <div className="case-meta__item">
             <span className="case-meta__label">Industry</span>

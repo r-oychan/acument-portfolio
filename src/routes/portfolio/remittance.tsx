@@ -21,6 +21,13 @@ function RemittanceCaseStudy() {
           <div className="case-project-title">B2B Remittance API Platform</div>
         </div>
 
+        <figure className="case-hero">
+          <img
+            src="/acument-portfolio/fintech-remittance-api/bank.png"
+            alt="Illustrated city skyline with a classical bank at its centre — the destination of each cross-border payment."
+          />
+        </figure>
+
         <div className="case-meta">
           <div className="case-meta__item">
             <span className="case-meta__label">Industry</span>
@@ -41,39 +48,68 @@ function RemittanceCaseStudy() {
         </div>
 
         <h4>The Challenge</h4>
-        <p>
-          Global enterprises increasingly need to pay vendors, partners, and employees in China—but
-          traditional banking infrastructure moves too slowly, costs too much, and lacks the
-          flexibility modern businesses require. The client sought to create an API-first solution
-          enabling foreign companies to initiate compliant, cost-effective payments to Chinese
-          recipients.
-        </p>
+        <div className="figure-clear">
+          <figure className="figure-inline">
+            <div className="figure-inline__media">
+              <img
+                src="/acument-portfolio/fintech-remittance-api/us-chinese-flag.png"
+                alt="Illustrated watercolor flags of the United States and China side by side."
+              />
+            </div>
+            <figcaption className="figure-inline__caption">
+              Two markets, one compliant payment corridor.
+            </figcaption>
+          </figure>
+
+          <p>
+            Global enterprises increasingly need to pay vendors, partners, and employees in
+            China—but traditional banking infrastructure moves too slowly, costs too much, and lacks
+            the flexibility modern businesses require. The client sought to create an API-first
+            solution enabling foreign companies to initiate compliant, cost-effective payments to
+            Chinese recipients.
+          </p>
+        </div>
 
         <h4>The Approach</h4>
-        <p>
-          We architected and delivered a comprehensive B2B payment platform encompassing APIs,
-          administrative tooling, and compliance infrastructure.
-        </p>
+        <div className="figure-clear">
+          <figure className="figure-inline">
+            <div className="figure-inline__media">
+              <img
+                src="/acument-portfolio/fintech-remittance-api/money.png"
+                alt="Illustrated coin and banknotes on a soft cream wash."
+              />
+            </div>
+            <figcaption className="figure-inline__caption">
+              Fees, FX, and settlement moving at API speed.
+            </figcaption>
+          </figure>
 
-        <p>
-          <strong>Enterprise API Suite</strong>
-          <br />
-          The REST API platform enables programmatic payment initiation with sophisticated business
-          logic:
-        </p>
-        <ul>
-          <li>
-            <strong>Dynamic Fee Calculation:</strong> Configurable transaction fee structures with
-            markup rules
-          </li>
-          <li>
-            <strong>Real-Time FX Management:</strong> Live exchange rates with spread configuration
-          </li>
-          <li>
-            <strong>Wallet Functionality:</strong> Pre-funded balance management for high-volume
-            senders
-          </li>
-        </ul>
+          <p>
+            We architected and delivered a comprehensive B2B payment platform encompassing APIs,
+            administrative tooling, and compliance infrastructure.
+          </p>
+
+          <p>
+            <strong>Enterprise API Suite</strong>
+            <br />
+            The REST API platform enables programmatic payment initiation with sophisticated
+            business logic:
+          </p>
+          <ul>
+            <li>
+              <strong>Dynamic Fee Calculation:</strong> Configurable transaction fee structures with
+              markup rules
+            </li>
+            <li>
+              <strong>Real-Time FX Management:</strong> Live exchange rates with spread
+              configuration
+            </li>
+            <li>
+              <strong>Wallet Functionality:</strong> Pre-funded balance management for high-volume
+              senders
+            </li>
+          </ul>
+        </div>
 
         <p>
           <strong>Compliance & Security Infrastructure</strong>
