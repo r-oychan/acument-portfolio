@@ -4,31 +4,83 @@
 
 **When writing or modifying any HTML, JSX, or TSX that involves UI/visual elements, always consult `design.md` first.** The design.md file contains the complete design system (inspired by IBM's Carbon Design System) including color palette, typography rules, component stylings, spacing, layout principles, and responsive behavior. All UI work must conform to the specifications defined there.
 
-## PDF Export
+## Case-study assets & PDFs
 
-Each case study has its **own PDF** at `public/portfolio-{id}.pdf`. Every case study page renders a download button (`DownloadCaseStudyLink`) that links to its own PDF.
+Every case study has a dedicated folder under `public/` named
+`<industry>-<project-scope>/`. All imagery, the `IMAGES.md` doc, and the
+exported `case-study.pdf` for that case live inside that one folder.
 
-When a case study's content changes, re-export just that PDF, e.g.:
+The route `id` stays short (`theme-park`, `mobility`, …) and is mapped to its
+asset folder by `assetFolder(id)` in `src/portfolioData.ts`:
+
+| Route id     | Asset folder                    |
+| ------------ | ------------------------------- |
+| `theme-park` | `hospitality-digital-commerce/` |
+| `mobility`   | `mobility-payment-backbone/`    |
+| `tuition`    | `fintech-tuition-portal/`       |
+| `remittance` | `fintech-remittance-api/`       |
+| `luxury`     | `luxury-security-automation/`   |
+| `financial`  | `luxury-insight-vlm/`           |
+| `sourcing`   | `fashion-sourcing-portal/`      |
+
+`portfolioPdfPath(id)` resolves to
+`/acument-portfolio/<assetFolder>/case-study.pdf`. Every case-study page
+renders `<DownloadCaseStudyLink caseStudyId="..." />` which uses that
+function.
+
+### Re-exporting a single PDF
 
 ```bash
 python ~/.claude/skills/html-to-pdf/scripts/export_pdf.py \
   --url http://localhost:5173/acument-portfolio/portfolio/theme-park \
-  --output public/portfolio-theme-park.pdf
+  --output public/hospitality-digital-commerce/case-study.pdf
 ```
 
-To regenerate **all** case-study PDFs in one go:
+### Re-exporting all PDFs
 
 ```bash
-for id in theme-park mobility tuition remittance luxury financial sourcing; do
+declare -A folders=(
+  [theme-park]=hospitality-digital-commerce
+  [mobility]=mobility-payment-backbone
+  [tuition]=fintech-tuition-portal
+  [remittance]=fintech-remittance-api
+  [luxury]=luxury-security-automation
+  [financial]=luxury-insight-vlm
+  [sourcing]=fashion-sourcing-portal
+)
+for id in "${!folders[@]}"; do
   python ~/.claude/skills/html-to-pdf/scripts/export_pdf.py \
     --url "http://localhost:5173/acument-portfolio/portfolio/$id" \
-    --output "public/portfolio-$id.pdf"
+    --output "public/${folders[$id]}/case-study.pdf"
 done
 ```
 
-When adding a new case study, add its `id` to the loop above and to the ID list inside `public/`. The download button is added per-page via `<DownloadCaseStudyLink caseStudyId="..." />`.
+### Adding a new case study
 
-A Claude Code hook is configured to remind you to re-export automatically when `src/routes/` or `src/components/` files change.
+1. Add the entry to `portfolioItems` in `src/portfolioData.ts`.
+2. Add its folder mapping to `assetFolders` in the same file.
+3. Create `public/<industry>-<project-scope>/` with an `IMAGES.md` (hero +
+   inline-figure plan) and the imagery.
+4. Create `src/routes/portfolio/<id>.tsx` and wire
+   `<DownloadCaseStudyLink caseStudyId="<id>" />`.
+5. Re-export to `public/<folder>/case-study.pdf`.
+
+### Imagery conventions
+
+Each folder contains:
+
+- `IMAGES.md` — documentation of every image, its intended slot, and alt /
+  caption copy.
+- One 16:9 hero PNG rendered via `.case-hero`.
+- One or two 1:1 inline PNGs rendered via `.figure-inline` inside a
+  `.figure-clear` wrapper.
+- `case-study.pdf` — the exported artifact.
+
+Shared fallbacks live in `public/common/` (generic watercolor laptop hero and
+Power Platform tiles). Use them if a case study has no bespoke imagery yet.
+
+A Claude Code hook is configured to remind you to re-export automatically when
+`src/routes/` or `src/components/` files change.
 
 ## Project Overview
 
@@ -74,12 +126,18 @@ src/
 │       ├── tuition.tsx
 │       ├── remittance.tsx
 │       ├── luxury.tsx
-│       └── financial.tsx
+│       ├── financial.tsx
+│       └── sourcing.tsx
 ├── styles/
 │   ├── index.css         # Tailwind imports + IBM Carbon design tokens
 │   └── portfolio.css     # Custom portfolio styles & CSS variables
 public/
-├── portfolio-*.pdf       # Per-case-study PDFs (auto-generated)
+├── <industry>-<scope>/   # one folder per case study — imagery + IMAGES.md + case-study.pdf
+│   ├── hero.png
+│   ├── *.png             # 1:1 inline figures
+│   ├── IMAGES.md
+│   └── case-study.pdf
+├── common/               # generic fallback imagery
 ├── 404.html              # SPA routing fallback for GitHub Pages
 └── .nojekyll
 ```

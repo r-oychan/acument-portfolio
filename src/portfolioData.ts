@@ -9,8 +9,24 @@ export interface PortfolioItem {
   tags: string[];
 }
 
+const assetFolders: Record<string, string> = {
+  "theme-park": "hospitality-digital-commerce",
+  mobility: "mobility-payment-backbone",
+  tuition: "fintech-tuition-portal",
+  remittance: "fintech-remittance-api",
+  luxury: "luxury-security-automation",
+  financial: "luxury-insight-vlm",
+  sourcing: "fashion-sourcing-portal",
+};
+
+export function assetFolder(id: string): string {
+  const folder = assetFolders[id];
+  if (!folder) throw new Error(`No asset folder mapped for case study id: ${id}`);
+  return folder;
+}
+
 export function portfolioPdfPath(id: string): string {
-  return `/acument-portfolio/portfolio-${id}.pdf`;
+  return `/acument-portfolio/${assetFolder(id)}/case-study.pdf`;
 }
 
 export const portfolioItems: PortfolioItem[] = [

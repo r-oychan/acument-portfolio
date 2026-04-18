@@ -25,7 +25,7 @@ function ThemeParkCaseStudy() {
 
         <figure className="case-hero">
           <img
-            src="/acument-portfolio/international-theme-park-company/images/castle.png"
+            src="/acument-portfolio/hospitality-digital-commerce/castle.png"
             alt="Illustrated castle at sunset — the destination at the heart of the guest journey."
           />
         </figure>
@@ -69,7 +69,7 @@ function ThemeParkCaseStudy() {
           <figure className="figure-inline">
             <div className="figure-inline__media">
               <img
-                src="/acument-portfolio/international-theme-park-company/images/turnstile.png"
+                src="/acument-portfolio/hospitality-digital-commerce/turnstile.png"
                 alt="Guest scanning a mobile QR ticket at a theme-park turnstile."
               />
             </div>

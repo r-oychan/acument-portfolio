@@ -25,7 +25,7 @@ function MobilityCaseStudy() {
 
         <figure className="case-hero">
           <img
-            src="/acument-portfolio/mobility/hero.png"
+            src="/acument-portfolio/mobility-payment-backbone/hero.png"
             alt="Illustrated commuter heading to their ride — the start of an everyday urban journey."
           />
         </figure>
@@ -54,7 +54,7 @@ function MobilityCaseStudy() {
           <figure className="figure-inline">
             <div className="figure-inline__media">
               <img
-                src="/acument-portfolio/mobility/taxi-lamp.png"
+                src="/acument-portfolio/mobility-payment-backbone/taxi-lamp.png"
                 alt="Illustrated taxi roof dome — a familiar sight on Hong Kong streets."
               />
             </div>
@@ -82,7 +82,7 @@ function MobilityCaseStudy() {
           <figure className="figure-inline">
             <div className="figure-inline__media">
               <img
-                src="/acument-portfolio/mobility/credit-card-payment.png"
+                src="/acument-portfolio/mobility-payment-backbone/credit-card-payment.png"
                 alt="Illustrated hand holding a contactless card at a payment moment."
               />
             </div>

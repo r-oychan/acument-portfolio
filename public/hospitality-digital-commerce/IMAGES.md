@@ -1,7 +1,8 @@
 # International Theme Park — case-study imagery
 
 Images for `src/routes/portfolio/theme-park.tsx`. Served at
-`/acument-portfolio/international-theme-park-company/images/<file>`.
+`/acument-portfolio/hospitality-digital-commerce/<file>`. PDF lives at
+`case-study.pdf` in this folder.
 
 ## Style
 
@@ -61,5 +62,5 @@ After adding images, re-export the PDF:
 ```bash
 python ~/.claude/skills/html-to-pdf/scripts/export_pdf.py \
   --url http://localhost:5173/acument-portfolio/portfolio/theme-park \
-  --output public/portfolio-theme-park.pdf
+  --output public/hospitality-digital-commerce/case-study.pdf
 ```

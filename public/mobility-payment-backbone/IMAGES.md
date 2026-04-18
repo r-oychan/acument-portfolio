@@ -1,7 +1,8 @@
 # Mobility — case-study imagery
 
 Images for `src/routes/portfolio/mobility.tsx`. Served at
-`/acument-portfolio/mobility/<file>`.
+`/acument-portfolio/mobility-payment-backbone/<file>`. PDF lives at
+`case-study.pdf` in this folder.
 
 ## Style
 
@@ -71,5 +72,5 @@ After adding images, re-export the PDF:
 ```bash
 python ~/.claude/skills/html-to-pdf/scripts/export_pdf.py \
   --url http://localhost:5173/acument-portfolio/portfolio/mobility \
-  --output public/portfolio-mobility.pdf
+  --output public/mobility-payment-backbone/case-study.pdf
 ```
